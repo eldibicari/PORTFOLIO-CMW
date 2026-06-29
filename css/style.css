@@ -130,6 +130,53 @@ button:focus-visible {
   border-radius: 50%;         /* cercle */
   background: #dfe5e1;        /* couleur d'attente si la photo n'est pas encore la */
   border: 3px solid var(--accent);
+  position: relative;
+  z-index: 1;                 /* la photo passe au-dessus des couches d'aura */
+  /* aura verte "scientifique" : anneau net + lueur proche (vert present) + lueur lointaine (teal) */
+  box-shadow:
+    0 0 0 4px rgba(167, 215, 52, .45),
+    0 0 22px 4px rgba(167, 215, 52, .35),
+    0 0 55px 12px rgba(33, 144, 140, .28);
+}
+/* le conteneur sert de repere pour poser les couches d'aura derriere la photo */
+.hero-photo {
+  position: relative;
+  width: 240px;
+  margin: 0;
+  display: inline-block;
+  line-height: 0;
+}
+/* aura diffuse qui "respire" autour de la photo */
+.hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(167,215,52,.30) 0%, rgba(33,144,140,.12) 55%, transparent 72%);
+  z-index: 0;
+  animation: aura-respire 3.4s ease-in-out infinite;
+}
+/* fin anneau d'orbite (clin d'oeil scientifique) qui tourne lentement */
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border-radius: 50%;
+  border: 1px dashed rgba(33,144,140,.5);
+  z-index: 0;
+  animation: aura-orbite 18s linear infinite;
+}
+@keyframes aura-respire {
+  0%, 100% { transform: scale(1);    opacity: .8; }
+  50%      { transform: scale(1.07); opacity: 1; }
+}
+@keyframes aura-orbite {
+  to { transform: rotate(360deg); }
+}
+/* accessibilite : pas d'animation si l'utilisateur la refuse (l'aura reste, figee) */
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo::after,
+  .hero-photo::before { animation: none; }
 }
 .hero-nom {
   font-size: clamp(2.2rem, 6vw, 3.4rem); /* taille qui s'adapte a l'ecran */
