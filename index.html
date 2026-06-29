@@ -90,15 +90,25 @@
       <!-- ===== PROJETS : 4 cartes (Noli portera la video) ===== -->
       <section class="projets">
         <h2 id="projets" class="titre-section">Projets</h2>
-        <div class="grille-projets"> <!-- grille de cartes, responsive -->
+        <!-- Noli = projet phare : carte "vedette" (apercu du site EN DIRECT + details) -->
+        <article class="projet-vedette">
+          <div class="projet-media">
+            <!-- Apercu en direct du vrai site (pas une capture) ; chargement differe (lazy) -->
+            <iframe class="noli-iframe" src="https://noli.mastercmw.com/" loading="lazy"
+                    title="Aperçu en direct du site Noli" referrerpolicy="no-referrer"></iframe>
+            <a class="media-plein" href="https://noli.mastercmw.com/" target="_blank" rel="noopener">Ouvrir le site en plein écran ↗</a>
+          </div>
+          <div class="projet-infos">
+            <h3 class="carte-titre" id="noliTitre">Noli</h3>
+            <p class="accroche" id="noliAccroche"></p>
+            <p id="noliIntro"></p>
+            <p class="note-busan" id="noliBusan"></p>
+            <p class="role-titre" id="noliRoleTitre">Mon rôle</p>
+            <ul class="role-liste" id="noliRole"></ul> <!-- rempli par le JS (FR/EN) -->
+          </div>
+        </article>
 
-          <article class="carte">
-            <h3 class="carte-titre">Noli</h3>
-            <ul class="carte-techs" aria-label="Apports"><li>Web</li><li>UX</li><li>Corée</li></ul>
-            <p class="carte-desc" id="projetNoliDesc"></p>
-            <!-- TODO : la video de Noli viendra ici (video auto-hebergee + sous-titres, ou iframe) -->
-            <a class="carte-lien" href="https://noli.mastercmw.com/" target="_blank" rel="noopener">noli.mastercmw.com ↗</a>
-          </article>
+        <div class="grille-projets"> <!-- les 3 autres projets, en grille -->
 
           <article class="carte">
             <h3 class="carte-titre">SocioSim · MIMESIS</h3>

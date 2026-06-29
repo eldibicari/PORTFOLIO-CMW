@@ -378,3 +378,54 @@ button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .sig-point, .sig-label { opacity: 1; transition: none; }
 }
+
+/* --- Noli : projet phare en vedette (apercu du site en direct + details) --- */
+.projet-vedette {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr; /* apercu a gauche, texte a droite */
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2.5rem;
+}
+.projet-media { position: sticky; top: 1rem; } /* l'apercu reste visible pendant qu'on lit */
+.noli-iframe {
+  width: 100%;
+  aspect-ratio: 4 / 3;   /* garde de bonnes proportions a toutes les largeurs */
+  border: 1px solid #d7dcdf;
+  border-radius: 10px;
+  background: #fff;
+}
+.media-plein {
+  display: inline-block;
+  margin-top: .5rem;
+  font-family: var(--police-mono);
+  font-size: .8rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+.media-plein:hover { text-decoration: underline; }
+.projet-vedette .accroche { font-weight: 700; font-size: 1.15rem; margin: .3rem 0 .9rem; }
+.note-busan { /* le sejour a Busan, mis en valeur par un filet vert */
+  color: var(--secondaire);
+  font-size: .95rem;
+  border-left: 3px solid var(--present);
+  padding-left: .8rem;
+  margin: 1rem 0;
+}
+.role-titre {
+  font-family: var(--police-mono);
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-top: 1.2rem;
+}
+.role-liste { list-style: none; margin: .5rem 0 0; }
+.role-liste li { font-size: .92rem; padding: .28rem 0; border-bottom: 1px solid #eef1ef; }
+.role-liste li:last-child { border-bottom: none; }
+
+/* Sur petit ecran : l'apercu passe au-dessus du texte */
+@media (max-width: 760px) {
+  .projet-vedette { grid-template-columns: 1fr; }
+  .projet-media { position: static; }
+}
