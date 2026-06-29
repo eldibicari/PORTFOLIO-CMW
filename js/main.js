@@ -474,37 +474,3 @@ if (boutonCv) {
     boutonCv.setAttribute("aria-expanded", "true");
   });
 }
-
-// --- Aura "rosace" de la photo : courbe parametrique r = cos(k.theta) (tracee comme la sigmoide) ---
-function dessinerRosace() {
-  var svg = document.getElementById("auraRosace");
-  if (!svg) return;
-  var k = 5;     // nombre de petales de la rosace
-  var R = 116;   // rayon maxi (unites du viewBox)
-  var d = "";
-  for (var i = 0; i <= 720; i++) {
-    var th = (i / 720) * Math.PI * 2;   // un tour complet
-    var r = R * Math.cos(k * th);       // l'equation de la rosace
-    var x = r * Math.cos(th);
-    var y = r * Math.sin(th);
-    d += (i === 0 ? "M" : "L") + x.toFixed(1) + " " + y.toFixed(1) + " ";
-  }
-  var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  path.setAttribute("d", d);
-  svg.appendChild(path);
-}
-
-// --- Labo d'aura (TEMPORAIRE) : on teste les concepts un par un en changeant la classe de la photo ---
-function activerLaboAura() {
-  var labo = document.getElementById("auraLabo");
-  var photo = document.getElementById("heroPhoto");
-  if (!labo || !photo) return;
-  labo.addEventListener("click", function (e) {
-    var bouton = e.target.closest("button[data-aura]");
-    if (!bouton) return;
-    photo.className = "hero-photo " + bouton.getAttribute("data-aura");
-  });
-}
-
-dessinerRosace();
-activerLaboAura();
