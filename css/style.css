@@ -160,7 +160,10 @@ button:focus-visible {
 .hero-intro {
   color: var(--secondaire);
   margin-top: 1rem;
-  max-width: 46ch; /* limite la longueur de ligne (~46 caracteres) */
+  max-width: 50ch;          /* limite la longueur de ligne (~50 caracteres) */
+  text-align: justify;      /* aligne sur les deux bords, comme le reste du site */
+  -webkit-hyphens: auto;
+  hyphens: auto;            /* coupe les mots pour eviter les gros trous */
 }
 /* Bouton d'appel a l'action (vers le contact) */
 .bouton {
