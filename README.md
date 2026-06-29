@@ -17,7 +17,7 @@ Ouvrir `index.html` dans un navigateur, ou utiliser l'extension **Live Server** 
 
 ## Crédit IA
 Ce site a été développé avec l'aide de **Claude (Anthropic)** pour l'assistance au code et la mise en forme.
-Les contenus, projets et expériences présentés sont réels ; l'auteur a écrit et compris une partie du code.
+Les contenus, projets et expériences présentés sont réels ; j'ai ecrit une partie du code.
 
 ---
 
