@@ -535,11 +535,7 @@ button:focus-visible {
 }
 .exp-titre { font-size: 1.08rem; margin: .1rem 0 .35rem; }
 .liste-exp li:last-child { border-bottom: none; }
-/* intro + descriptions : alignees a gauche (comme Contact), espacement regulier */
-#experiencesIntro,
-.exp-item p:not(.exp-meta) {
-  max-width: 70ch;
-}
+/* intro + descriptions : pleine largeur comme Contact (espacement net, aligne a gauche) */
 #experiencesIntro { margin: 0 0 .9rem; }
 .exp-item p:not(.exp-meta) { margin: 0; line-height: 1.55; }
 
