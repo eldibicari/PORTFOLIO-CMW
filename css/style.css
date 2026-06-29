@@ -332,18 +332,56 @@ button:focus-visible {
   color: var(--secondaire);
 }
 
-/* --- Competences : grille de familles --- */
+/* --- Competences : familles en cartes + etiquettes facon "techno" (teintes viridis) --- */
 .grille-competences {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+.bloc-comp {
+  background: #fff;
+  border: 1px solid #e3e7e5;
+  border-top: 4px solid var(--c-famille, var(--accent)); /* barre coloree = identite de la famille */
+  border-radius: 8px;
+  padding: 1rem 1.1rem 1.15rem;
 }
 .bloc-comp h3 {
   font-family: var(--police-mono);
-  font-size: .95rem;
-  color: var(--accent);
-  margin-bottom: .3rem;
+  font-size: .9rem;
+  color: var(--encre);
+  margin: 0 0 .7rem;
 }
+/* petite pastille de couleur devant le titre */
+.bloc-comp h3::before {
+  content: "";
+  display: inline-block;
+  width: .55rem; height: .55rem;
+  margin-right: .45rem;
+  border-radius: 50%;
+  background: var(--c-famille, var(--accent));
+  vertical-align: middle;
+}
+.comp-tags {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: .4rem;
+}
+.comp-tags li {
+  font-family: var(--police-mono);
+  font-size: .72rem;
+  color: var(--encre);
+  background: var(--c-fond, rgba(33,144,140,.10));
+  border: 1px solid var(--c-bord, rgba(33,144,140,.30));
+  padding: .2rem .55rem;
+  border-radius: 999px;
+}
+/* une teinte viridis par famille (barre, pastille, etiquettes) */
+.bloc-comp.c-web     { --c-famille:#46337E; --c-fond:rgba(70,51,126,.10);  --c-bord:rgba(70,51,126,.30); }
+.bloc-comp.c-design  { --c-famille:#3B528B; --c-fond:rgba(59,82,139,.10);  --c-bord:rgba(59,82,139,.30); }
+.bloc-comp.c-data    { --c-famille:#2C728E; --c-fond:rgba(44,114,142,.10); --c-bord:rgba(44,114,142,.30); }
+.bloc-comp.c-sci     { --c-famille:#21908C; --c-fond:rgba(33,144,140,.10); --c-bord:rgba(33,144,140,.30); }
+.bloc-comp.c-gestion { --c-famille:#35B779; --c-fond:rgba(53,183,121,.12); --c-bord:rgba(53,183,121,.35); }
+.bloc-comp.c-langues { --c-famille:#A7D734; --c-fond:rgba(167,215,52,.18); --c-bord:rgba(167,215,52,.45); }
 
 /* --- Experiences : liste simple --- */
 .liste-exp { list-style: none; }
