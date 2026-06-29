@@ -159,9 +159,52 @@ button:focus-visible {
 }
 
 /* ============ A PROPOS ============ */
+/* Deux colonnes : le texte (souple) + le panneau "en bref" (largeur fixe) */
+.apropos-corps {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2.5rem;
+  align-items: start; /* le panneau se cale en haut, il ne s'etire pas */
+}
 .apropos-texte {
   font-size: 1.1rem;
   max-width: 60ch;
+  text-align: justify;      /* bords gauche ET droit alignes -> bloc bien "carre" */
+  -webkit-hyphens: auto;
+  hyphens: auto;            /* coupe les mots en fin de ligne pour eviter les gros trous */
+}
+.apropos-texte + .apropos-texte {
+  margin-top: 1rem; /* espace entre les deux paragraphes */
+}
+
+/* Panneau "en bref" : petite fiche technique */
+.panneau-donnees {
+  background: #fff;
+  border: 1px solid #d7dcdf;
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+}
+.panneau-titre {
+  font-family: var(--police-mono);
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--accent);
+  margin-bottom: .8rem;
+}
+.panneau-donnees dl { margin: 0; }
+.panneau-donnees dt {
+  font-family: var(--police-mono);
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--secondaire);
+  margin-top: .9rem;
+}
+.panneau-donnees dt:first-of-type { margin-top: 0; } /* pas d'espace avant le 1er */
+.panneau-donnees dd {
+  margin: .15rem 0 0;
+  font-size: .95rem;
 }
 /* Mots-cles affiches comme des etiquettes en police mono */
 .mots-cles {
@@ -190,6 +233,7 @@ button:focus-visible {
     padding: 2rem 0 3rem;
   }
   .hero-intro { margin-left: auto; margin-right: auto; } /* recentre le paragraphe */
+  .apropos-corps { grid-template-columns: 1fr; } /* une seule colonne : le panneau passe dessous */
 }
 
 /* ============ Accessibilite : si l'utilisateur veut moins d'animations ============ */

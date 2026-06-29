@@ -56,15 +56,35 @@
       <!-- ===== A PROPOS ===== -->
       <section class="apropos">
         <h2 id="aPropos" class="titre-section">A propos</h2>
-        <p id="aProposTexte" class="apropos-texte"></p>  <!-- 1er paragraphe (traduit FR-EN) -->
-        <p id="aProposTexte2" class="apropos-texte"></p> <!-- 2e paragraphe (traduit FR-EN) -->
 
-        <!-- Quelques mots-cles affiches en police mono (touches techniques) -->
-        <ul class="mots-cles" aria-label="Domaines">
-          <li>IA &amp; Data</li>
-          <li>Cultures numeriques</li>
-          <li>Sciences</li>
-        </ul>
+        <div class="apropos-corps"> <!-- deux colonnes : le texte, puis le panneau "en bref" -->
+
+          <div class="apropos-texte-bloc">
+            <p id="aProposTexte" class="apropos-texte"></p>  <!-- 1er paragraphe (traduit FR-EN) -->
+            <p id="aProposTexte2" class="apropos-texte"></p> <!-- 2e paragraphe (traduit FR-EN) -->
+
+            <!-- Mots-cles en police mono (touches techniques) -->
+            <ul class="mots-cles" aria-label="Domaines">
+              <li id="motCle1">Cultures numériques</li>
+              <li id="motCle2">Sociologie numérique</li>
+              <li id="motCle3">Web</li>
+              <li id="motCle4">Gestion de projet</li>
+              <li id="motCle5">IA &amp; data</li>
+            </ul>
+          </div>
+
+          <!-- Panneau "en bref" : petite fiche de donnees factuelles (style technique, en mono) -->
+          <aside class="panneau-donnees" aria-label="En bref">
+            <p id="panneauTitre" class="panneau-titre">en bref</p>
+            <dl> <!-- liste de definitions : un intitule (dt) + sa valeur (dd) -->
+              <dt id="dlLanguesT">Langues</dt>    <dd id="dlLanguesV">FR · EN · Albanais · ES/IT</dd>
+              <dt id="dlPaysT">International</dt>  <dd id="dlPaysV">Corée · Pays-Bas · Italie · Albanie</dd>
+              <dt id="dlFormationT">Formation</dt> <dd id="dlFormationV">Master CMW + DIGIS</dd>
+              <dt id="dlRechercheT">Recherche</dt> <dd id="dlRechercheV">Poste à temps plein</dd>
+            </dl>
+          </aside>
+
+        </div>
       </section>
 
       <!-- ===== Sections suivantes : a construire dans les prochaines etapes ===== -->
