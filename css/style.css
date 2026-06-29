@@ -404,6 +404,7 @@ button:focus-visible {
   text-decoration: none;
 }
 .media-plein:hover { text-decoration: underline; }
+.projet-infos { text-align: center; } /* texte de Noli centre dans sa colonne */
 .projet-vedette .accroche { font-weight: 700; font-size: 1.15rem; margin: .3rem 0 .9rem; }
 .note-busan { /* le sejour a Busan, mis en valeur par un filet vert */
   color: var(--secondaire);
