@@ -94,7 +94,7 @@
         <article class="projet-vedette">
           <div class="projet-media">
             <!-- Apercu en direct du vrai site (pas une capture) ; chargement differe (lazy) -->
-            <iframe class="noli-iframe" src="https://noli.mastercmw.com/" loading="lazy"
+            <iframe class="apercu-iframe" src="https://noli.mastercmw.com/" loading="lazy"
                     title="Aperçu en direct du site Noli" referrerpolicy="no-referrer"></iframe>
             <a class="media-plein" href="https://noli.mastercmw.com/" target="_blank" rel="noopener">Ouvrir le site en plein écran ↗</a>
           </div>
@@ -107,15 +107,23 @@
           </div>
         </article>
 
-        <div class="grille-projets"> <!-- les 3 autres projets, en grille -->
+        <!-- SocioSim = 2e projet phare : meme traitement que Noli (apercu en direct + details) -->
+        <article class="projet-vedette">
+          <div class="projet-media">
+            <iframe class="apercu-iframe" src="https://sociosim.vercel.app/" loading="lazy"
+                    title="Aperçu en direct de la page d'accueil de SocioSim" referrerpolicy="no-referrer"></iframe>
+            <a class="media-plein" href="https://sociosim.vercel.app/" target="_blank" rel="noopener">Ouvrir le site en plein écran ↗</a>
+          </div>
+          <div class="projet-infos">
+            <h3 class="carte-titre" id="sociosimTitre">SocioSim</h3>
+            <p class="accroche" id="sociosimAccroche"></p>
+            <p id="sociosimIntro"></p>
+            <p class="role-titre" id="sociosimRoleTitre">Mon rôle</p>
+            <ul class="role-liste" id="sociosimRole"></ul> <!-- rempli par le JS (FR/EN) -->
+          </div>
+        </article>
 
-          <article class="carte">
-            <h3 class="carte-titre">SocioSim · MIMESIS</h3>
-            <ul class="carte-techs" aria-label="Apports"><li>IA générative</li><li>Recherche</li></ul>
-            <p class="carte-desc" id="projetSociosimDesc"></p>
-            <!-- TODO : lien public a confirmer (l'URL Vercel actuelle est privee) -->
-            <a class="carte-lien" href="#">Lien à confirmer</a>
-          </article>
+        <div class="grille-projets"> <!-- les 2 autres projets, en grille -->
 
           <article class="carte">
             <h3 class="carte-titre">Benchmarking AI Chatbots</h3>

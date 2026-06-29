@@ -388,7 +388,7 @@ button:focus-visible {
   margin-bottom: 2.5rem;
 }
 .projet-media { position: sticky; top: 1rem; } /* l'apercu reste visible pendant qu'on lit */
-.noli-iframe {
+.apercu-iframe {
   width: 100%;
   aspect-ratio: 4 / 3;   /* garde de bonnes proportions a toutes les largeurs */
   border: 1px solid #d7dcdf;
