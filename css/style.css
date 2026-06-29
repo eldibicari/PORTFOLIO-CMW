@@ -415,8 +415,8 @@ button:focus-visible {
   color: var(--secondaire);
 }
 .pied-copyright { font-weight: 500; color: var(--encre); }
-.pied-mentions { margin-top: .4rem; line-height: 1.55; max-width: 85ch; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
-.pied .credit-ia { margin-top: .5rem; font-style: italic; max-width: 85ch; text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+.pied-mentions { margin-top: .4rem; line-height: 1.55; }
+.pied .credit-ia { margin-top: .5rem; font-style: italic; }
 .pied-haut { margin-top: .9rem; }
 .pied-haut a {
   font-family: var(--police-mono);
@@ -535,13 +535,10 @@ button:focus-visible {
 }
 .exp-titre { font-size: 1.08rem; margin: .1rem 0 .35rem; }
 .liste-exp li:last-child { border-bottom: none; }
-/* intro + descriptions : justifiees comme le reste du site, espacement regulier */
+/* intro + descriptions : alignees a gauche (comme Contact), espacement regulier */
 #experiencesIntro,
 .exp-item p:not(.exp-meta) {
   max-width: 70ch;
-  text-align: justify;
-  -webkit-hyphens: auto;
-  hyphens: auto;
 }
 #experiencesIntro { margin: 0 0 .9rem; }
 .exp-item p:not(.exp-meta) { margin: 0; line-height: 1.55; }
