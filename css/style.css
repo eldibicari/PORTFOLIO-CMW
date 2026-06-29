@@ -402,6 +402,11 @@ button:focus-visible {
 }
 .apercu-iframe.pdf { aspect-ratio: 3 / 4; } /* format portrait pour un poster */
 .apercu-img { width: 100%; height: auto; display: block; border: 1px solid #d7dcdf; border-radius: 10px; background: #eef1ef; } /* couverture (image) d'un projet */
+
+/* Carte "texte seul" (ex. Winter Week) : une seule colonne, pas d'apercu */
+.projet-vedette.projet-texte { grid-template-columns: 1fr; }
+.projet-texte .projet-infos { max-width: 72ch; } /* limite la largeur pour le confort de lecture */
+.ww-liens { display: flex; flex-wrap: wrap; gap: 1.2rem; }
 .media-plein {
   display: inline-block;
   margin-top: .5rem;
