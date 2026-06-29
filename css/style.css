@@ -437,6 +437,33 @@ button:focus-visible {
 .maths-carte .accroche { margin: .2rem 0 .7rem; }
 .role-compact { margin-top: .8rem; font-size: .92rem; color: var(--secondaire); }
 .maths-carte .carte-lien { display: inline-block; margin-top: .7rem; }
+
+/* Experiences : meta en mono + titre, dernier item sans filet */
+.exp-meta {
+  font-family: var(--police-mono);
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--secondaire);
+  margin-bottom: .2rem;
+}
+.exp-titre { font-size: 1.08rem; margin: .1rem 0 .35rem; }
+.liste-exp li:last-child { border-bottom: none; }
+
+/* Contact : bouton CV "bientot disponible" + message */
+.cv-zone { margin-top: 1.2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.btn-cv {
+  font-family: var(--police-mono);
+  font-size: .85rem;
+  color: var(--fond);
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  padding: .55rem 1.1rem;
+  cursor: pointer;
+}
+.btn-cv:hover, .btn-cv:focus { background: var(--profondeur); }
+.cv-msg { font-family: var(--police-mono); font-size: .85rem; color: var(--secondaire); }
 .media-plein {
   display: inline-block;
   margin-top: .5rem;

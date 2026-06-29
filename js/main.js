@@ -69,7 +69,19 @@ var francais = {
   dicolaborIntro: "Dico-Labor est un dictionnaire numérique consacré à l'histoire du travail : il explore ses dimensions historiques, sociales et culturelles à travers une navigation thématique (concepts, lieux, pratiques, figures…), une carte et une frise chronologique, et un moteur de recherche. Le site est multilingue (français, italien, anglais). Projet web mené en équipe, présenté et soutenu à l'Université de Turin.",
   dicolaborRoleTitre: "Mon rôle",
   dicolaborRole: "<li><strong>Intégration web</strong> — intégration des pages et des contenus du dictionnaire sous WordPress.</li><li><strong>Communication</strong> — coordination et échanges au sein de l'équipe.</li><li><strong>Présentation & soutenance</strong> — présentation du projet et de l'université, en binôme, lors de la soutenance à Turin.</li>",
-  contactIntro: "À compléter : une phrase d'invitation + tes liens (email, LinkedIn, GitHub)."
+  contactIntro: "Un poste, une question, un échange ? Je suis ouvert aux opportunités mêlant IA, data, sociologie numérique et gestion de projet.",
+  experiencesIntro: "En parallèle de mon parcours, des expériences de recherche, de service et de terrain qui m'ont appris la rigueur, l'organisation et le travail sous pression.",
+  expStageMeta: "Stage · mi-janvier → mi-juillet 2026 · bureau Cortex, laboratoire LISIS",
+  expStageTitre: "Stagiaire — projet SocioSim / MIMESIS",
+  expStageDesc: "Stage de fin d'études autour de MIMESIS, une application d'IA générative pour la recherche en sciences sociales (voir le projet plus haut).",
+  expMcdoMeta: "Août 2025 → aujourd'hui · Tremblay-en-France",
+  expMcdoTitre: "Équipier polyvalent — McDonald's Drive",
+  expMcdoDesc: "Service client en temps réel et gestion du flux de commandes : organisation, communication claire et qualité de service maintenue sous pression.",
+  expLeclercMeta: "2019 → 2024 · Sainte-Eulalie (Bordeaux)",
+  expLeclercTitre: "Agent de service client — Leclerc Drive",
+  expLeclercDesc: "Suivi des commandes et relation client, reporting d'indicateurs à la direction, gestion des stocks et résolution de problèmes au quotidien.",
+  cvBtn: "Voir mon CV",
+  cvMsg: "📄 Mon CV final arrive bientôt — cette section sera mise à jour."
 };
 
 // Memes cles, mais en anglais
@@ -140,7 +152,19 @@ var anglais = {
   dicolaborIntro: "Dico-Labor is a digital dictionary devoted to the history of work: it explores its historical, social and cultural dimensions through thematic navigation (concepts, places, practices, figures…), a map and a timeline, and a search engine. The site is multilingual (French, Italian, English). A team web project, presented and defended at the University of Turin.",
   dicolaborRoleTitre: "My role",
   dicolaborRole: "<li><strong>Web integration</strong> — integrating the dictionary's pages and content in WordPress.</li><li><strong>Communication</strong> — coordination and exchanges within the team.</li><li><strong>Presentation & defence</strong> — presenting the project and the university, as a pair, at the Turin defence.</li>",
-  contactIntro: "To complete: a short invitation line + your links (email, LinkedIn, GitHub)."
+  contactIntro: "A role, a question, a chat? I'm open to opportunities mixing AI, data, digital sociology and project management.",
+  experiencesIntro: "Alongside my studies, research, service and field experiences that taught me rigour, organisation and working under pressure.",
+  expStageMeta: "Internship · mid-January → mid-July 2026 · Cortex office, LISIS lab",
+  expStageTitre: "Intern — SocioSim / MIMESIS project",
+  expStageDesc: "End-of-studies internship around MIMESIS, a generative-AI application for social-science research (see the project above).",
+  expMcdoMeta: "August 2025 → present · Tremblay-en-France",
+  expMcdoTitre: "Multi-skilled team member — McDonald's Drive",
+  expMcdoDesc: "Real-time customer service and order-flow management: organisation, clear communication and consistent service quality under pressure.",
+  expLeclercMeta: "2019 → 2024 · Sainte-Eulalie (Bordeaux)",
+  expLeclercTitre: "Customer service agent — Leclerc Drive",
+  expLeclercDesc: "Order follow-up and customer support, reporting KPIs to management, inventory management and daily problem-solving.",
+  cvBtn: "View my résumé",
+  cvMsg: "📄 My final résumé is coming soon — this section will be updated."
 };
 
 function appliquerLangue(codeLangue) {
@@ -311,3 +335,13 @@ function dessinerSigmoide() {
 appliquerLangue("fr");
 animerNom();
 dessinerSigmoide();
+
+// Bouton "Voir mon CV" : au clic, affiche un message "CV bientot disponible"
+var boutonCv = document.getElementById("cvBtn");
+if (boutonCv) {
+  boutonCv.addEventListener("click", function () {
+    var cvMsg = document.getElementById("cvMsg");
+    if (cvMsg) { cvMsg.hidden = false; }
+    boutonCv.setAttribute("aria-expanded", "true");
+  });
+}

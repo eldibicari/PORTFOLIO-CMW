@@ -246,9 +246,23 @@
       <!-- ===== EXPERIENCES : court, competences transversales ===== -->
       <section class="experiences">
         <h2 id="experiences" class="titre-section">Experiences</h2>
+        <p id="experiencesIntro"></p>
         <ul class="liste-exp">
-          <li><strong>McDonald's</strong> — <span class="a-completer">compétences transversales à compléter</span></li>
-          <li><strong>Leclerc</strong> — <span class="a-completer">compétences transversales à compléter</span></li>
+          <li class="exp-item">
+            <p class="exp-meta" id="expStageMeta"></p>
+            <h3 class="exp-titre" id="expStageTitre"></h3>
+            <p id="expStageDesc"></p>
+          </li>
+          <li class="exp-item">
+            <p class="exp-meta" id="expMcdoMeta"></p>
+            <h3 class="exp-titre" id="expMcdoTitre"></h3>
+            <p id="expMcdoDesc"></p>
+          </li>
+          <li class="exp-item">
+            <p class="exp-meta" id="expLeclercMeta"></p>
+            <h3 class="exp-titre" id="expLeclercTitre"></h3>
+            <p id="expLeclercDesc"></p>
+          </li>
         </ul>
       </section>
 
@@ -257,10 +271,13 @@
         <h2 id="contact" class="titre-section">Contact</h2>
         <p id="contactIntro" class="contact-intro"></p>
         <ul class="contact-liens">
-          <li><a href="#">Email à compléter</a></li>
-          <li><a href="#">LinkedIn à compléter</a></li>
-          <li><a href="#">GitHub à compléter</a></li>
+          <li><a href="mailto:eldibicari99@gmail.com">eldibicari99@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/eldi-bicari-2790b1288" target="_blank" rel="noopener">LinkedIn</a></li>
         </ul>
+        <p class="cv-zone">
+          <button type="button" id="cvBtn" class="btn-cv" aria-expanded="false" aria-controls="cvMsg"></button>
+          <span id="cvMsg" class="cv-msg" hidden></span>
+        </p>
       </section>
 
     </main>
