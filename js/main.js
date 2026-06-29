@@ -101,9 +101,9 @@ var francais = {
   parcoursLabels: ["Clermont", "Bordeaux", "Amsterdam", "Turin", "Corée", "Master CMW + DIGIS"],
   // chaque famille = une liste d'etiquettes (li injectes dans le <ul>)
   compWebT: "Web", compWebV: "<li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>SQL</li><li>Java</li><li>WordPress</li><li>Responsive</li>",
-  compDesignT: "Design & web interactif", compDesignV: "<li>UX/UI</li><li>Design interactif</li><li>Suite Adobe</li><li>Documentaire interactif</li><li>Montage vidéo</li><li>Sous-titrage</li>",
+  compDesignT: "Design & web interactif", compDesignV: "<li>UX/UI</li><li>Design interactif</li><li>Suite Adobe</li><li>Documentaire interactif</li><li>Histoire & culture coréennes</li><li>Montage vidéo</li><li>Sous-titrage</li>",
   compDataT: "Data & IA", compDataV: "<li>Python</li><li>NumPy</li><li>Pandas</li><li>Dataviz</li><li>Web scraping</li><li>KPI</li><li>IA générative</li>",
-  compSciT: "Sciences & recherche", compSciV: "<li>Maths appliquées</li><li>Modélisation</li><li>EDP</li><li>Optimisation</li><li>Sociologie numérique</li><li>Méthodes numériques</li>",
+  compSciT: "Sciences & recherche", compSciV: "<li>Maths appliquées</li><li>Modélisation</li><li>EDP</li><li>Optimisation</li><li>C++</li><li>FreeFEM</li><li>Méthodes numériques</li><li>Sociologie numérique</li>",
   compGestionT: "Gestion de projet", compGestionV: "<li>Planification</li><li>Agile</li><li>Design Sprint</li><li>Travail en équipe</li><li>Reporting</li><li>Soutenances</li>",
   compLanguesT: "Langues", compLanguesV: "<li>Français</li><li>Anglais (bilingue)</li><li>Albanais (natif)</li><li>Espagnol</li><li>Italien (A2–B1)</li>",
   // liens "voir / ouvrir" des projets (texte visible des boutons)
@@ -231,9 +231,9 @@ var anglais = {
   sigmoideAria: "Sigmoid-shaped curve showing Eldi's path, from Clermont to the CMW/DIGIS master's and the AI internship",
   parcoursLabels: ["Clermont", "Bordeaux", "Amsterdam", "Turin", "Korea", "Master CMW + DIGIS"],
   compWebT: "Web", compWebV: "<li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>SQL</li><li>Java</li><li>WordPress</li><li>Responsive</li>",
-  compDesignT: "Design & interactive web", compDesignV: "<li>UX/UI</li><li>Interaction design</li><li>Adobe Suite</li><li>Interactive documentary</li><li>Video editing</li><li>Subtitling</li>",
+  compDesignT: "Design & interactive web", compDesignV: "<li>UX/UI</li><li>Interaction design</li><li>Adobe Suite</li><li>Interactive documentary</li><li>Korean history & culture</li><li>Video editing</li><li>Subtitling</li>",
   compDataT: "Data & AI", compDataV: "<li>Python</li><li>NumPy</li><li>Pandas</li><li>Data viz</li><li>Web scraping</li><li>KPIs</li><li>Generative AI</li>",
-  compSciT: "Science & research", compSciV: "<li>Applied maths</li><li>Modelling</li><li>PDEs</li><li>Optimisation</li><li>Digital sociology</li><li>Numerical methods</li>",
+  compSciT: "Science & research", compSciV: "<li>Applied maths</li><li>Modelling</li><li>PDEs</li><li>Optimisation</li><li>C++</li><li>FreeFEM</li><li>Numerical methods</li><li>Digital sociology</li>",
   compGestionT: "Project management", compGestionV: "<li>Planning</li><li>Agile</li><li>Design Sprint</li><li>Teamwork</li><li>Reporting</li><li>Defences</li>",
   compLanguesT: "Languages", compLanguesV: "<li>French</li><li>English (bilingual)</li><li>Albanian (native)</li><li>Spanish</li><li>Italian (A2–B1)</li>",
   // liens des projets (texte visible des boutons), en anglais
