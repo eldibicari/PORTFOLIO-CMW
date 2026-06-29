@@ -94,6 +94,38 @@ var francais = {
   piedMentions: "Site personnel d'Eldi Bicari, réalisé dans le cadre du Master 2 Cultures et Métiers du Web (Université Gustave Eiffel). Hébergé sur GitHub Pages. Contact : eldibicari99@gmail.com.",
   piedCreditIa: "Ce site a été développé avec l'aide de Claude (Anthropic) pour l'assistance au code et la mise en forme. Les contenus, projets et expériences présentés sont réels ; l'auteur a écrit et compris une partie du code.",
   piedRetourHaut: "↑ Revenir en haut",
+  // lien d'evitement + legende et etiquettes du graphe + familles de competences
+  lienEvitement: "Aller au contenu",
+  sigmoideLegende: "<span class=\"mono\">σ(x) = 1 / (1 + e<sup>−x</sup>)</span> — la fonction sigmoïde : objet mathématique <em>et</em> fonction d'activation des réseaux de neurones. Ma trajectoire, des sciences vers l'IA.",
+  sigmoideAria: "Courbe en forme de sigmoïde illustrant la trajectoire d'Eldi, de Clermont jusqu'au master CMW/DIGIS et au stage en IA",
+  parcoursLabels: ["Clermont", "Bordeaux", "Amsterdam", "Turin", "Corée", "Master CMW + DIGIS"],
+  compWebT: "Web", compWebV: "à compléter",
+  compDataT: "Data & IA", compDataV: "à compléter",
+  compSciT: "Scientifique", compSciV: "à compléter",
+  compGestionT: "Gestion de projet", compGestionV: "à compléter",
+  compLanguesT: "Langues", compLanguesV: "à compléter",
+  // liens "voir / ouvrir" des projets (texte visible des boutons)
+  noliLienPlein: "Ouvrir le site en plein écran ↗",
+  sociosimLienPlein: "Ouvrir le site en plein écran ↗",
+  dicolaborLienPlein: "Ouvrir le site en plein écran ↗",
+  amsterdamLienProjet: "Voir le projet publié ↗",
+  wwLienEvent: "Page de l'événement ↗",
+  wwLienProgramme: "Programme (PDF) ↗",
+  memoireLienPdf: "Ouvrir le mémoire (PDF) ↗",
+  foretLienRapport: "Voir le rapport (PDF) ↗",
+  optimLienOverleaf: "Voir sur Overleaf ↗",
+  // textes sans affichage direct : alt des images, info-bulles des apercus, labels lecteurs d'ecran
+  altHeroPhoto: "Portrait d'Eldi Bicari",
+  titreNoliApercu: "Aperçu en direct du site Noli",
+  titreSociosimApercu: "Aperçu en direct de la page d'accueil de SocioSim",
+  titreDicolaborApercu: "Aperçu en direct du site Dico-Labor",
+  titreAmsterdamPoster: "Poster du projet Benchmarking AI Chatbots (Whose Voice Matters)",
+  titreMemoireApercu: "Mémoire de M1 d'Eldi Bicari (PDF)",
+  ariaTempsForts: "Temps forts",
+  ariaNavPrincipale: "Navigation principale",
+  ariaNavLangues: "Choix de la langue",
+  ariaDomaines: "Domaines",
+  ariaEnBref: "En bref",
   cvBtn: "Voir mon CV",
   cvMsg: "📄 Mon CV final arrive bientôt — cette section sera mise à jour."
 };
@@ -191,12 +223,54 @@ var anglais = {
   piedMentions: "Personal website by Eldi Bicari, created for the Master 2 Cultures et Métiers du Web programme (Université Gustave Eiffel). Hosted on GitHub Pages. Contact: eldibicari99@gmail.com.",
   piedCreditIa: "This site was developed with the help of Claude (Anthropic) for code assistance and layout. The content, projects and experiences shown are real; the author wrote and understands part of the code.",
   piedRetourHaut: "↑ Back to top",
+  // memes cles que ci-dessus, en anglais
+  lienEvitement: "Skip to content",
+  sigmoideLegende: "<span class=\"mono\">σ(x) = 1 / (1 + e<sup>−x</sup>)</span> — the sigmoid function: a mathematical object <em>and</em> a neural-network activation function. My path, from science toward AI.",
+  sigmoideAria: "Sigmoid-shaped curve showing Eldi's path, from Clermont to the CMW/DIGIS master's and the AI internship",
+  parcoursLabels: ["Clermont", "Bordeaux", "Amsterdam", "Turin", "Korea", "Master CMW + DIGIS"],
+  compWebT: "Web", compWebV: "to be completed",
+  compDataT: "Data & AI", compDataV: "to be completed",
+  compSciT: "Scientific", compSciV: "to be completed",
+  compGestionT: "Project management", compGestionV: "to be completed",
+  compLanguesT: "Languages", compLanguesV: "to be completed",
+  // liens des projets (texte visible des boutons), en anglais
+  noliLienPlein: "Open the site fullscreen ↗",
+  sociosimLienPlein: "Open the site fullscreen ↗",
+  dicolaborLienPlein: "Open the site fullscreen ↗",
+  amsterdamLienProjet: "See the published project ↗",
+  wwLienEvent: "Event page ↗",
+  wwLienProgramme: "Programme (PDF) ↗",
+  memoireLienPdf: "Open the dissertation (PDF) ↗",
+  foretLienRapport: "See the report (PDF) ↗",
+  optimLienOverleaf: "View on Overleaf ↗",
+  // attributs (alt, info-bulles, labels lecteurs d'ecran), en anglais
+  altHeroPhoto: "Portrait of Eldi Bicari",
+  titreNoliApercu: "Live preview of the Noli site",
+  titreSociosimApercu: "Live preview of the SocioSim home page",
+  titreDicolaborApercu: "Live preview of the Dico-Labor site",
+  titreAmsterdamPoster: "Poster of the Benchmarking AI Chatbots project (Whose Voice Matters)",
+  titreMemoireApercu: "Eldi Bicari's M1 dissertation (PDF)",
+  ariaTempsForts: "Highlights",
+  ariaNavPrincipale: "Main navigation",
+  ariaNavLangues: "Language selector",
+  ariaDomaines: "Areas",
+  ariaEnBref: "At a glance",
   cvBtn: "View my résumé",
   cvMsg: "📄 My final résumé is coming soon — this section will be updated."
 };
 
+// on retient la langue affichee, pour redessiner le graphe Parcours dans la bonne langue
+var langueActuelle = "fr";
+
+// petit utilitaire : traduit un attribut (alt, title, aria-label...) d'un element donne
+function majAttribut(id, attribut, texte) {
+  var el = document.getElementById(id);
+  if (el && texte) { el.setAttribute(attribut, texte); }
+}
+
 function appliquerLangue(codeLangue) {
   // 0) Choisir la langue
+  langueActuelle = codeLangue;
   var contenuLangue = codeLangue === "fr" ? francais : anglais;
 
   // 0 bis) Mettre a jour la langue de la page (utile pour les lecteurs d'ecran)
@@ -212,6 +286,22 @@ function appliquerLangue(codeLangue) {
       element.innerHTML = contenuLangue[cle];
     }
   }
+
+  // les elements sans texte visible : on traduit leurs attributs a part
+  majAttribut("heroPhotoImg", "alt", contenuLangue.altHeroPhoto);
+  majAttribut("noliApercu", "title", contenuLangue.titreNoliApercu);
+  majAttribut("sociosimApercu", "title", contenuLangue.titreSociosimApercu);
+  majAttribut("dicolaborApercu", "title", contenuLangue.titreDicolaborApercu);
+  majAttribut("amsterdamPoster", "title", contenuLangue.titreAmsterdamPoster);
+  majAttribut("memoireApercu", "title", contenuLangue.titreMemoireApercu);
+  majAttribut("wwTempsForts", "aria-label", contenuLangue.ariaTempsForts);
+  majAttribut("navPrincipale", "aria-label", contenuLangue.ariaNavPrincipale);
+  majAttribut("navLangues", "aria-label", contenuLangue.ariaNavLangues);
+  majAttribut("motsClesListe", "aria-label", contenuLangue.ariaDomaines);
+  majAttribut("panneauDonnees", "aria-label", contenuLangue.ariaEnBref);
+
+  // on redessine le graphe Parcours pour que ses etiquettes suivent la langue
+  dessinerSigmoide();
 }
 
 document.getElementById("btn-fr").addEventListener("click", function () {
@@ -278,7 +368,7 @@ function animerNom() {
 // sigma(x) = 1 / (1 + e^-x) : objet mathematique ET fonction d'activation de reseau de neurones.
 
 // Les etapes du parcours, dans l'ordre. "fort: true" = experience mise en avant (le master).
-// (Eldi : modifie librement les labels ; "x" controle la position le long de la courbe.)
+// (le texte des etiquettes vient de parcoursLabels FR/EN ; ici "x" donne la position sur la courbe.)
 var etapesParcours = [
   { x: -5.4, label: "Clermont",           fort: false },
   { x: -3.2, label: "Bordeaux",           fort: false },
@@ -291,6 +381,15 @@ var etapesParcours = [
 function dessinerSigmoide() {
   var svg = document.getElementById("sigmoide-svg");
   if (!svg) return;
+
+  // labels du graphe + texte alternatif dans la langue du moment
+  var contenu = langueActuelle === "en" ? anglais : francais;
+  var labels = contenu.parcoursLabels || [];
+  if (contenu.sigmoideAria) { svg.setAttribute("aria-label", contenu.sigmoideAria); }
+
+  // on vide le SVG avant de le redessiner (sinon les points se cumulent au changement de langue)
+  while (svg.firstChild) { svg.removeChild(svg.firstChild); }
+  svg.classList.remove("visible");
 
   // Marges et dimensions du dessin (en unites du viewBox)
   var L = 70, R = 60, T = 50, B = 90;   // marges : gauche, droite, haut, bas
@@ -333,7 +432,7 @@ function dessinerSigmoide() {
     texte.setAttribute("y", (py + (e.fort ? -18 : 22)).toFixed(1)); // master au-dessus, le reste en dessous
     texte.setAttribute("text-anchor", "middle");
     texte.setAttribute("class", e.fort ? "sig-label fort" : "sig-label");
-    texte.textContent = e.label;
+    texte.textContent = labels[j] || e.label; // version traduite si dispo, sinon valeur par defaut
     svg.appendChild(texte);
   }
 
@@ -359,10 +458,9 @@ function dessinerSigmoide() {
   observateur.observe(svg);
 }
 
-// Au chargement : langue par defaut, animation du nom, puis dessin de la sigmoide
+// Au chargement : on applique la langue par defaut (ce qui dessine aussi la sigmoide) + le nom anime
 appliquerLangue("fr");
 animerNom();
-dessinerSigmoide();
 
 // Bouton "Voir mon CV" : au clic, affiche un message "CV bientot disponible"
 var boutonCv = document.getElementById("cvBtn");

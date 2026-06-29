@@ -22,13 +22,13 @@
   <body> <!-- Debut du contenu visible -->
 
     <!-- Lien d'evitement : permet au clavier de sauter directement au contenu -->
-    <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+    <a class="lien-evitement" id="lienEvitement" href="#contenu">Aller au contenu</a>
 
     <!-- En-tete fixe : menu de navigation (saute aux sections) + boutons de langue -->
     <header class="entete">
       <div class="entete-inner">
         <!-- Menu principal : chaque lien pointe vers l'ancre d'une section (id du titre) -->
-        <nav class="menu-principal" aria-label="Navigation principale">
+        <nav class="menu-principal" id="navPrincipale" aria-label="Navigation principale">
           <ul>
             <li><a href="#aPropos" id="navApropos"></a></li>
             <li><a href="#projets" id="navProjets"></a></li>
@@ -38,7 +38,7 @@
             <li><a href="#contact" id="navContact"></a></li>
           </ul>
         </nav>
-        <nav class="langues" aria-label="Choix de la langue">
+        <nav class="langues" id="navLangues" aria-label="Choix de la langue">
           <button id="btn-fr" type="button">FR</button> <!-- Bouton pour passer en francais -->
           <button id="btn-en" type="button">EN</button> <!-- Bouton pour passer en anglais -->
         </nav>
@@ -53,7 +53,7 @@
       <section class="hero">
         <figure class="hero-photo">
           <!-- TODO Eldi : depose ta photo dans le dossier img/ sous le nom eldi.jpg (format carre conseille) -->
-          <img src="img/eldi.jpg" alt="Portrait d'Eldi Bicari" width="240" height="240" />
+          <img id="heroPhotoImg" src="img/eldi.jpg" alt="Portrait d'Eldi Bicari" width="240" height="240" />
         </figure>
 
         <div class="hero-texte">
@@ -80,7 +80,7 @@
             <p id="aProposTexte2" class="apropos-texte"></p> <!-- 2e paragraphe (traduit FR-EN) -->
 
             <!-- Mots-cles en police mono (touches techniques) -->
-            <ul class="mots-cles" aria-label="Domaines">
+            <ul class="mots-cles" id="motsClesListe" aria-label="Domaines">
               <li id="motCle1">Cultures numériques</li>
               <li id="motCle2">Sociologie numérique</li>
               <li id="motCle3">Web</li>
@@ -90,7 +90,7 @@
           </div>
 
           <!-- Panneau "en bref" : petite fiche de donnees factuelles (style technique, en mono) -->
-          <aside class="panneau-donnees" aria-label="En bref">
+          <aside class="panneau-donnees" id="panneauDonnees" aria-label="En bref">
             <p id="panneauTitre" class="panneau-titre">en bref</p>
             <dl> <!-- liste de definitions : un intitule (dt) + sa valeur (dd) -->
               <dt id="dlLanguesT">Langues</dt>    <dd id="dlLanguesV">FR · EN · Albanais · ES/IT</dd>
@@ -110,9 +110,9 @@
         <article class="projet-vedette">
           <div class="projet-media">
             <!-- Apercu en direct du vrai site (pas une capture) ; chargement differe (lazy) -->
-            <iframe class="apercu-iframe" src="https://noli.mastercmw.com/" loading="lazy"
+            <iframe class="apercu-iframe" id="noliApercu" src="https://noli.mastercmw.com/" loading="lazy"
                     title="Aperçu en direct du site Noli" referrerpolicy="no-referrer"></iframe>
-            <a class="media-plein" href="https://noli.mastercmw.com/" target="_blank" rel="noopener">Ouvrir le site en plein écran ↗</a>
+            <a class="media-plein" id="noliLienPlein" href="https://noli.mastercmw.com/" target="_blank" rel="noopener">Ouvrir le site en plein écran ↗</a>
           </div>
           <div class="projet-infos">
             <h3 class="carte-titre" id="noliTitre">Noli</h3>
@@ -126,9 +126,9 @@
         <!-- SocioSim = 2e projet phare : meme traitement que Noli (apercu en direct + details) -->
         <article class="projet-vedette">
           <div class="projet-media">
-            <iframe class="apercu-iframe" src="https://sociosim.vercel.app/" loading="lazy"
+            <iframe class="apercu-iframe" id="sociosimApercu" src="https://sociosim.vercel.app/" loading="lazy"
                     title="Aperçu en direct de la page d'accueil de SocioSim" referrerpolicy="no-referrer"></iframe>
-            <a class="media-plein" href="https://sociosim.vercel.app/" target="_blank" rel="noopener">Ouvrir le site en plein écran ↗</a>
+            <a class="media-plein" id="sociosimLienPlein" href="https://sociosim.vercel.app/" target="_blank" rel="noopener">Ouvrir le site en plein écran ↗</a>
           </div>
           <div class="projet-infos">
             <h3 class="carte-titre" id="sociosimTitre">SocioSim</h3>
@@ -142,9 +142,9 @@
         <!-- Dico-Labor = 3e projet phare : meme traitement (apercu en direct + details) -->
         <article class="projet-vedette">
           <div class="projet-media">
-            <iframe class="apercu-iframe" src="https://www.dicowork.evanm.fr/" loading="lazy"
+            <iframe class="apercu-iframe" id="dicolaborApercu" src="https://www.dicowork.evanm.fr/" loading="lazy"
                     title="Aperçu en direct du site Dico-Labor" referrerpolicy="no-referrer"></iframe>
-            <a class="media-plein" href="https://www.dicowork.evanm.fr/" target="_blank" rel="noopener">Ouvrir le site en plein écran ↗</a>
+            <a class="media-plein" id="dicolaborLienPlein" href="https://www.dicowork.evanm.fr/" target="_blank" rel="noopener">Ouvrir le site en plein écran ↗</a>
           </div>
           <div class="projet-infos">
             <h3 class="carte-titre" id="dicolaborTitre">Dico-Labor</h3>
@@ -158,9 +158,9 @@
         <!-- Benchmarking AI Chatbots = projet phare (recherche) : l'apercu est le poster (PDF en ligne) -->
         <article class="projet-vedette">
           <div class="projet-media">
-            <iframe class="apercu-iframe pdf" src="https://www.digitalmethods.net/pub/Dmi/WinterSchool2025BenchmarkingAIChatbots/BenchmarkLLM-1.pdf" loading="lazy"
+            <iframe class="apercu-iframe pdf" id="amsterdamPoster" src="https://www.digitalmethods.net/pub/Dmi/WinterSchool2025BenchmarkingAIChatbots/BenchmarkLLM-1.pdf" loading="lazy"
                     title="Poster du projet Benchmarking AI Chatbots (Whose Voice Matters)"></iframe>
-            <a class="media-plein" href="https://www.digitalmethods.net/Dmi/WinterSchool2025BenchmarkingAIChatbots" target="_blank" rel="noopener">Voir le projet publié ↗</a>
+            <a class="media-plein" id="amsterdamLienProjet" href="https://www.digitalmethods.net/Dmi/WinterSchool2025BenchmarkingAIChatbots" target="_blank" rel="noopener">Voir le projet publié ↗</a>
           </div>
           <div class="projet-infos">
             <h3 class="carte-titre" id="amsterdamTitre">Benchmarking AI Chatbots</h3>
@@ -178,12 +178,12 @@
             <h3 class="carte-titre">Winter Week for Research Training</h3>
             <p class="accroche" id="wwAccroche"></p>
             <p id="wwIntro"></p>
-            <ul class="carte-techs" aria-label="Temps forts">
+            <ul class="carte-techs" id="wwTempsForts" aria-label="Temps forts">
               <li>Yann LeCun</li><li>Perspectives on AI</li><li>Just a Prompt or Nothing?</li><li>MIMESIS</li>
             </ul>
             <p class="ww-liens">
-              <a class="carte-lien" href="https://graduate-school.univ-gustave-eiffel.fr/winter-week" target="_blank" rel="noopener">Page de l'événement ↗</a>
-              <a class="carte-lien" href="https://graduate-school.univ-gustave-eiffel.fr/fileadmin/contributeurs/graduate-school/Winter_Week/Programme_WW_GS.pdf" target="_blank" rel="noopener">Programme (PDF) ↗</a>
+              <a class="carte-lien" id="wwLienEvent" href="https://graduate-school.univ-gustave-eiffel.fr/winter-week" target="_blank" rel="noopener">Page de l'événement ↗</a>
+              <a class="carte-lien" id="wwLienProgramme" href="https://graduate-school.univ-gustave-eiffel.fr/fileadmin/contributeurs/graduate-school/Winter_Week/Programme_WW_GS.pdf" target="_blank" rel="noopener">Programme (PDF) ↗</a>
             </p>
             <p class="badge-avenir" id="wwAvenir"></p>
           </div>
@@ -193,9 +193,9 @@
         <article class="projet-vedette">
           <div class="projet-media">
             <!-- TODO Eldi : depose ton memoire en docs/memoire-m1.pdf (glisser-deposer, comme la photo) -->
-            <iframe class="apercu-iframe pdf" src="docs/memoire-m1.pdf" loading="lazy"
+            <iframe class="apercu-iframe pdf" id="memoireApercu" src="docs/memoire-m1.pdf" loading="lazy"
                     title="Mémoire de M1 d'Eldi Bicari (PDF)"></iframe>
-            <a class="media-plein" href="docs/memoire-m1.pdf" target="_blank" rel="noopener">Ouvrir le mémoire (PDF) ↗</a>
+            <a class="media-plein" id="memoireLienPdf" href="docs/memoire-m1.pdf" target="_blank" rel="noopener">Ouvrir le mémoire (PDF) ↗</a>
           </div>
           <div class="projet-infos">
             <h3 class="carte-titre" id="memoireTitre">Mémoire de M1</h3>
@@ -217,7 +217,7 @@
               <p id="mathsForetIntro"></p>
               <p class="role-compact" id="mathsForetRole"></p>
               <!-- TODO Eldi : depose le rapport en docs/maths-foret-rapport.pdf -->
-              <a class="carte-lien" href="docs/maths-foret-rapport.pdf" target="_blank" rel="noopener">Voir le rapport (PDF) ↗</a>
+              <a class="carte-lien" id="foretLienRapport" href="docs/maths-foret-rapport.pdf" target="_blank" rel="noopener">Voir le rapport (PDF) ↗</a>
             </article>
             <article class="maths-carte">
               <p class="maths-meta" id="mathsOptimMeta"></p>
@@ -225,7 +225,7 @@
               <p class="accroche" id="mathsOptimAccroche"></p>
               <p id="mathsOptimIntro"></p>
               <p class="role-compact" id="mathsOptimRole"></p>
-              <a class="carte-lien" href="https://www.overleaf.com/read/rwzrjfjdfgsh#856256" target="_blank" rel="noopener">Voir sur Overleaf ↗</a>
+              <a class="carte-lien" id="optimLienOverleaf" href="https://www.overleaf.com/read/rwzrjfjdfgsh#856256" target="_blank" rel="noopener">Voir sur Overleaf ↗</a>
             </article>
           </div>
         </div>
@@ -240,7 +240,7 @@
         <figure class="sigmoide">
           <svg id="sigmoide-svg" class="sig-svg" viewBox="0 0 900 420" role="img"
                aria-label="Courbe en forme de sigmoide illustrant la trajectoire d'Eldi, de Clermont jusqu'au master CMW/DIGIS et au stage en IA"></svg>
-          <figcaption class="sigmoide-legende">
+          <figcaption class="sigmoide-legende" id="sigmoideLegende">
             <span class="mono">σ(x) = 1 / (1 + e<sup>−x</sup>)</span> — la fonction sigmoïde :
             objet mathématique <em>et</em> fonction d'activation des réseaux de neurones. Ma trajectoire, des sciences vers l'IA.
           </figcaption>
@@ -251,11 +251,11 @@
       <section class="competences">
         <h2 id="competences" class="titre-section">Competences</h2>
         <div class="grille-competences">
-          <div class="bloc-comp"><h3>Web</h3><p class="a-completer">à compléter</p></div>
-          <div class="bloc-comp"><h3>Data &amp; IA</h3><p class="a-completer">à compléter</p></div>
-          <div class="bloc-comp"><h3>Scientifique</h3><p class="a-completer">à compléter</p></div>
-          <div class="bloc-comp"><h3>Gestion de projet</h3><p class="a-completer">à compléter</p></div>
-          <div class="bloc-comp"><h3>Langues</h3><p class="a-completer">à compléter</p></div>
+          <div class="bloc-comp"><h3 id="compWebT">Web</h3><p class="a-completer" id="compWebV">à compléter</p></div>
+          <div class="bloc-comp"><h3 id="compDataT">Data &amp; IA</h3><p class="a-completer" id="compDataV">à compléter</p></div>
+          <div class="bloc-comp"><h3 id="compSciT">Scientifique</h3><p class="a-completer" id="compSciV">à compléter</p></div>
+          <div class="bloc-comp"><h3 id="compGestionT">Gestion de projet</h3><p class="a-completer" id="compGestionV">à compléter</p></div>
+          <div class="bloc-comp"><h3 id="compLanguesT">Langues</h3><p class="a-completer" id="compLanguesV">à compléter</p></div>
         </div>
       </section>
 
