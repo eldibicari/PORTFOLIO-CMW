@@ -40,7 +40,11 @@ var francais = {
   sociosimRoleTitre: "Mon rôle",
   sociosimRole: "<li><strong>Architecture & développement</strong> — reprise d'un prototype transformé en application complète, déployée et utilisable en classe (front Next.js, back Python).</li><li><strong>UX/UI</strong> — refonte de l'accueil et des cartes personas, identité graphique et animations.</li><li><strong>Système de voix (ElevenLabs)</strong> — lecture des réponses, recommandation de voix à la création d'un persona, et conversation vocale temps réel en plein écran.</li><li><strong>Analyse pédagogique</strong> — transcription automatique des entretiens, retours sur la qualité du matériau et la posture, conseils de coaching.</li>",
   projetAmsterdamDesc: "À compléter : benchmarking de chatbots IA — Digital Methods Winter School (Amsterdam), équipe internationale, rapport publié.",
-  projetDicoworkDesc: "À compléter : projet web à deux, présenté et soutenu à l'Université de Turin.",
+  dicolaborTitre: "Dico-Labor — dictionnaire numérique de l'histoire du travail",
+  dicolaborAccroche: "Un dictionnaire collaboratif et multilingue sur l'histoire du travail, pensé pour l'université.",
+  dicolaborIntro: "Dico-Labor est un dictionnaire numérique consacré à l'histoire du travail : il explore ses dimensions historiques, sociales et culturelles à travers une navigation thématique (concepts, lieux, pratiques, figures…), une carte et une frise chronologique, et un moteur de recherche. Le site est multilingue (français, italien, anglais). Projet web mené en équipe, présenté et soutenu à l'Université de Turin.",
+  dicolaborRoleTitre: "Mon rôle",
+  dicolaborRole: "<li><strong>Intégration web</strong> — intégration des pages et des contenus du dictionnaire sous WordPress.</li><li><strong>Communication</strong> — coordination et échanges au sein de l'équipe.</li><li><strong>Présentation & soutenance</strong> — présentation du projet et de l'université, en binôme, lors de la soutenance à Turin.</li>",
   contactIntro: "À compléter : une phrase d'invitation + tes liens (email, LinkedIn, GitHub)."
 };
 
@@ -83,7 +87,11 @@ var anglais = {
   sociosimRoleTitre: "My role",
   sociosimRole: "<li><strong>Architecture & development</strong> — took an initial prototype and turned it into a complete, deployed app used in class (Next.js front, Python back).</li><li><strong>UX/UI</strong> — redesigned the home page and persona cards, with a real visual identity and animations.</li><li><strong>Voice system (ElevenLabs)</strong> — spoken replies, voice recommendation when creating a persona, and real-time full-screen voice conversation.</li><li><strong>Pedagogical analysis</strong> — automatic interview transcription, feedback on material quality and interviewer stance, coaching tips.</li>",
   projetAmsterdamDesc: "To complete: benchmarking AI chatbots — Digital Methods Winter School (Amsterdam), international team, published report.",
-  projetDicoworkDesc: "To complete: a two-person web project, presented and defended at the University of Turin.",
+  dicolaborTitre: "Dico-Labor — a digital dictionary of the history of work",
+  dicolaborAccroche: "A collaborative, multilingual dictionary on the history of work, built for academia.",
+  dicolaborIntro: "Dico-Labor is a digital dictionary devoted to the history of work: it explores its historical, social and cultural dimensions through thematic navigation (concepts, places, practices, figures…), a map and a timeline, and a search engine. The site is multilingual (French, Italian, English). A team web project, presented and defended at the University of Turin.",
+  dicolaborRoleTitre: "My role",
+  dicolaborRole: "<li><strong>Web integration</strong> — integrating the dictionary's pages and content in WordPress.</li><li><strong>Communication</strong> — coordination and exchanges within the team.</li><li><strong>Presentation & defence</strong> — presenting the project and the university, as a pair, at the Turin defence.</li>",
   contactIntro: "To complete: a short invitation line + your links (email, LinkedIn, GitHub)."
 };
 

@@ -123,7 +123,23 @@
           </div>
         </article>
 
-        <div class="grille-projets"> <!-- les 2 autres projets, en grille -->
+        <!-- Dico-Labor = 3e projet phare : meme traitement (apercu en direct + details) -->
+        <article class="projet-vedette">
+          <div class="projet-media">
+            <iframe class="apercu-iframe" src="https://www.dicowork.evanm.fr/" loading="lazy"
+                    title="Aperçu en direct du site Dico-Labor" referrerpolicy="no-referrer"></iframe>
+            <a class="media-plein" href="https://www.dicowork.evanm.fr/" target="_blank" rel="noopener">Ouvrir le site en plein écran ↗</a>
+          </div>
+          <div class="projet-infos">
+            <h3 class="carte-titre" id="dicolaborTitre">Dico-Labor</h3>
+            <p class="accroche" id="dicolaborAccroche"></p>
+            <p id="dicolaborIntro"></p>
+            <p class="role-titre" id="dicolaborRoleTitre">Mon rôle</p>
+            <ul class="role-liste" id="dicolaborRole"></ul> <!-- rempli par le JS (FR/EN) -->
+          </div>
+        </article>
+
+        <div class="grille-projets"> <!-- dernier projet (Amsterdam) en grille -->
 
           <article class="carte">
             <h3 class="carte-titre">Benchmarking AI Chatbots</h3>
@@ -131,13 +147,6 @@
             <p class="carte-desc" id="projetAmsterdamDesc"></p>
             <!-- TODO : lien vers le rapport publie -->
             <a class="carte-lien" href="#">Rapport à lier</a>
-          </article>
-
-          <article class="carte">
-            <h3 class="carte-titre">Dicowork</h3>
-            <ul class="carte-techs" aria-label="Apports"><li>Web</li><li>Binôme</li><li>Turin</li></ul>
-            <p class="carte-desc" id="projetDicoworkDesc"></p>
-            <a class="carte-lien" href="https://www.dicowork.evanm.fr/" target="_blank" rel="noopener">dicowork.evanm.fr ↗</a>
           </article>
 
         </div>
