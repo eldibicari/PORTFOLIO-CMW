@@ -51,8 +51,13 @@
 
       <!-- ===== HAUT DE PAGE : photo + presentation (sans dates) ===== -->
       <section class="hero">
-        <figure class="hero-photo">
+        <figure class="hero-photo aura-orbites" id="heroPhoto">
           <!-- TODO Eldi : depose ta photo dans le dossier img/ sous le nom eldi.jpg (format carre conseille) -->
+          <!-- couches d'aura (decoratif) : leur rendu depend de la classe aura-* posee sur la figure -->
+          <span class="aura" aria-hidden="true">
+            <svg class="aura-svg" id="auraRosace" viewBox="-130 -130 260 260" preserveAspectRatio="xMidYMid meet"></svg>
+            <i></i><i></i><i></i><i></i><i></i><i></i>
+          </span>
           <img id="heroPhotoImg" src="img/eldi.jpg" alt="Portrait d'Eldi Bicari" width="240" height="240" />
         </figure>
 
@@ -312,6 +317,15 @@
       <p id="piedCreditIa" class="credit-ia"></p>
       <p class="pied-haut"><a href="#contenu" id="piedRetourHaut"></a></p>
     </footer>
+
+    <!-- ===== TEMPORAIRE : labo d'aura pour tester les 4 concepts un par un (a retirer apres choix) ===== -->
+    <div class="aura-labo" id="auraLabo" aria-label="Test des auras">
+      <span>Aura :</span>
+      <button type="button" data-aura="aura-orbites">Orbites</button>
+      <button type="button" data-aura="aura-neurones">Neurones</button>
+      <button type="button" data-aura="aura-rosace">Rosace</button>
+      <button type="button" data-aura="aura-ondes">Ondes</button>
+    </div>
 
   </body>
 </html>

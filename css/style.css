@@ -138,7 +138,8 @@ button:focus-visible {
     0 0 22px 4px rgba(167, 215, 52, .35),
     0 0 55px 12px rgba(33, 144, 140, .28);
 }
-/* le conteneur sert de repere pour poser les couches d'aura derriere la photo */
+/* ===== AURA DE LA PHOTO : 4 concepts testes un par un (orbites / neurones / rosace / ondes) ===== */
+/* conteneur : repere pour poser les couches d'aura derriere la photo */
 .hero-photo {
   position: relative;
   width: 240px;
@@ -146,38 +147,137 @@ button:focus-visible {
   display: inline-block;
   line-height: 0;
 }
-/* aura diffuse qui "respire" autour de la photo */
-.hero-photo::after {
+.hero-photo .aura {
+  position: absolute;
+  inset: 0;
+  z-index: 0;                 /* derriere la photo (img = z-index 1) */
+  pointer-events: none;
+}
+.hero-photo .aura i,
+.hero-photo .aura .aura-svg {
+  position: absolute;
+  display: none;             /* masque par defaut ; chaque concept reaffiche ce qu'il lui faut */
+}
+.hero-photo .aura .aura-svg {
+  top: -48px; left: -48px;
+  width: calc(100% + 96px);
+  height: calc(100% + 96px);
+  overflow: visible;
+}
+
+/* --- ORBITES : ellipses inclinees + electrons (atome / systeme solaire) --- */
+.hero-photo.aura-orbites .aura i:nth-of-type(-n+3) {
+  display: block;
+  inset: -14px;
+  border: 1px solid rgba(33,144,140,.5);
+  border-radius: 50%;
+  transform-origin: 50% 50%;
+  animation: orbite-spin 16s linear infinite;
+}
+.hero-photo.aura-orbites .aura i:nth-of-type(1) { transform: rotate(15deg)  scaleY(.42); }
+.hero-photo.aura-orbites .aura i:nth-of-type(2) { inset: -24px; transform: rotate(75deg)  scaleY(.4);  animation-duration: 22s; animation-direction: reverse; }
+.hero-photo.aura-orbites .aura i:nth-of-type(3) { inset: -34px; transform: rotate(130deg) scaleY(.38); animation-duration: 28s; }
+.hero-photo.aura-orbites .aura i:nth-of-type(-n+3)::before {
   content: "";
   position: absolute;
-  inset: -16px;
+  top: -4px; left: 50%; margin-left: -4px;
+  width: 8px; height: 8px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(167,215,52,.30) 0%, rgba(33,144,140,.12) 55%, transparent 72%);
-  z-index: 0;
-  animation: aura-respire 3.4s ease-in-out infinite;
+  background: var(--present);
+  box-shadow: 0 0 9px 2px rgba(167,215,52,.75);
 }
-/* fin anneau d'orbite (clin d'oeil scientifique) qui tourne lentement */
-.hero-photo::before {
+@keyframes orbite-spin { to { rotate: 360deg; } }
+
+/* --- NEURONES : noeuds relies au centre + impulsions (IA) --- */
+.hero-photo.aura-neurones .aura i:nth-of-type(-n+6) {
+  display: block;
+  top: 50%; left: 50%;
+  width: 56%; height: 1px;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, rgba(33,144,140,0), rgba(33,144,140,.45));
+}
+.hero-photo.aura-neurones .aura i:nth-of-type(1) { transform: rotate(0deg); }
+.hero-photo.aura-neurones .aura i:nth-of-type(2) { transform: rotate(60deg); }
+.hero-photo.aura-neurones .aura i:nth-of-type(3) { transform: rotate(120deg); }
+.hero-photo.aura-neurones .aura i:nth-of-type(4) { transform: rotate(180deg); }
+.hero-photo.aura-neurones .aura i:nth-of-type(5) { transform: rotate(240deg); }
+.hero-photo.aura-neurones .aura i:nth-of-type(6) { transform: rotate(300deg); }
+.hero-photo.aura-neurones .aura i:nth-of-type(-n+6)::after {
   content: "";
   position: absolute;
-  inset: -9px;
+  right: -5px; top: -4.5px;
+  width: 10px; height: 10px;
   border-radius: 50%;
-  border: 1px dashed rgba(33,144,140,.5);
-  z-index: 0;
-  animation: aura-orbite 18s linear infinite;
+  background: var(--present);
+  box-shadow: 0 0 8px 2px rgba(167,215,52,.6);
+  animation: neurone-pulse 2.4s ease-in-out infinite;
 }
-@keyframes aura-respire {
-  0%, 100% { transform: scale(1);    opacity: .8; }
-  50%      { transform: scale(1.07); opacity: 1; }
+.hero-photo.aura-neurones .aura i:nth-of-type(2)::after { animation-delay: .4s; }
+.hero-photo.aura-neurones .aura i:nth-of-type(3)::after { animation-delay: .8s; }
+.hero-photo.aura-neurones .aura i:nth-of-type(4)::after { animation-delay: 1.2s; }
+.hero-photo.aura-neurones .aura i:nth-of-type(5)::after { animation-delay: 1.6s; }
+.hero-photo.aura-neurones .aura i:nth-of-type(6)::after { animation-delay: 2s; }
+@keyframes neurone-pulse {
+  0%, 100% { transform: scale(.7); opacity: .5; }
+  50%      { transform: scale(1.1); opacity: 1; }
 }
-@keyframes aura-orbite {
-  to { transform: rotate(360deg); }
+
+/* --- ROSACE : courbe parametrique r = cos(k.theta), maths pures (tracee par le JS) --- */
+.hero-photo.aura-rosace .aura .aura-svg {
+  display: block;
+  transform-origin: 50% 50%;
+  animation: rosace-tour 42s linear infinite;
 }
+.hero-photo.aura-rosace .aura-svg path {
+  fill: none;
+  stroke: var(--present);
+  stroke-width: 1.4;
+  opacity: .85;
+}
+@keyframes rosace-tour { to { transform: rotate(360deg); } }
+
+/* --- ONDES : anneaux concentriques qui se propagent (rappel EDP / equation des ondes) --- */
+.hero-photo.aura-ondes .aura i:nth-of-type(-n+4) {
+  display: block;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(33,144,140,.5);
+  animation: onde-ripple 3.2s ease-out infinite;
+}
+.hero-photo.aura-ondes .aura i:nth-of-type(2) { animation-delay: .8s; }
+.hero-photo.aura-ondes .aura i:nth-of-type(3) { animation-delay: 1.6s; }
+.hero-photo.aura-ondes .aura i:nth-of-type(4) { animation-delay: 2.4s; }
+@keyframes onde-ripple {
+  0%   { transform: scale(1);   opacity: .7; border-color: rgba(167,215,52,.6); }
+  100% { transform: scale(1.45); opacity: 0; border-color: rgba(33,144,140,0); }
+}
+
 /* accessibilite : pas d'animation si l'utilisateur la refuse (l'aura reste, figee) */
 @media (prefers-reduced-motion: reduce) {
-  .hero-photo::after,
-  .hero-photo::before { animation: none; }
+  .hero-photo .aura i,
+  .hero-photo .aura .aura-svg { animation: none !important; }
 }
+
+/* TEMPORAIRE : petit labo pour tester les auras une par une (a retirer apres choix) */
+.aura-labo {
+  position: fixed;
+  left: 1rem; bottom: 1rem;
+  z-index: 50;
+  display: flex; gap: .4rem; align-items: center; flex-wrap: wrap;
+  background: rgba(24,36,42,.92);
+  color: #fff;
+  padding: .5rem .6rem;
+  border-radius: 8px;
+  font-family: var(--police-mono); font-size: .72rem;
+}
+.aura-labo button {
+  font: inherit; cursor: pointer;
+  background: transparent; color: #fff;
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 5px;
+  padding: .25rem .5rem;
+}
+.aura-labo button:hover { border-color: var(--present); color: var(--present); }
 .hero-nom {
   font-size: clamp(2.2rem, 6vw, 3.4rem); /* taille qui s'adapte a l'ecran */
   font-weight: 700;
