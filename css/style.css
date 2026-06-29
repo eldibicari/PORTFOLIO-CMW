@@ -342,3 +342,39 @@ button:focus-visible {
 
 /* Repere visuel discret pour ce qui reste a remplir */
 .a-completer { color: #9aa6a3; font-style: italic; }
+
+/* --- Parcours : la courbe sigmoide (signature du site) --- */
+.sigmoide { margin: 0; }
+.sig-svg { width: 100%; height: auto; display: block; }     /* le SVG s'adapte a la largeur */
+.sig-courbe {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+/* Les points et labels apparaissent en fondu une fois la courbe tracee */
+.sig-point { fill: var(--accent); opacity: 0; transition: opacity .5s ease .8s; }
+.sig-point.fort { fill: var(--present); stroke: var(--accent); stroke-width: 2; } /* le master ressort */
+.sig-label {
+  font-family: var(--police-mono);
+  font-size: 14px;
+  fill: var(--secondaire);
+  opacity: 0;
+  transition: opacity .5s ease 1s;
+}
+.sig-label.fort { fill: var(--encre); font-weight: 700; font-size: 15px; } /* le master, plus clair */
+.sig-svg.visible .sig-point,
+.sig-svg.visible .sig-label { opacity: 1; }
+
+.sigmoide-legende {
+  margin-top: 1rem;
+  font-size: .85rem;
+  color: var(--secondaire);
+  max-width: 60ch;
+}
+.sigmoide-legende .mono { font-family: var(--police-mono); color: var(--accent); }
+
+/* Accessibilite : si l'utilisateur veut moins d'animations, tout est visible sans fondu */
+@media (prefers-reduced-motion: reduce) {
+  .sig-point, .sig-label { opacity: 1; transition: none; }
+}

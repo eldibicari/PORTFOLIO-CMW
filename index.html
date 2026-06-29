@@ -129,13 +129,17 @@
       <!-- ===== PARCOURS : LA signature du site (future courbe sigmoide) ===== -->
       <section class="parcours">
         <h2 id="parcours" class="titre-section">Parcours</h2>
-        <!-- Signature : une courbe sigmoide = objet mathematique ET fonction d'activation
-             de reseau de neurones = la trajectoire d'Eldi. On la construira a l'etape dediee. -->
-        <div class="zone-placeholder" id="parcours-zone">
-          <p>Ici viendra la <strong>courbe sigmoïde</strong> de ta trajectoire
-             (Clermont → Bordeaux → Amsterdam → Turin → Corée → CMW / DIGIS / stage IA).
-             C'est la pièce maîtresse — on la construit ensuite.</p>
-        </div>
+        <!-- Signature du site : une courbe sigmoide = objet mathematique ET fonction
+             d'activation de reseau de neurones = la trajectoire d'Eldi.
+             Le dessin (courbe + points) est genere par le JS a partir de la vraie formule. -->
+        <figure class="sigmoide">
+          <svg id="sigmoide-svg" class="sig-svg" viewBox="0 0 900 420" role="img"
+               aria-label="Courbe en forme de sigmoide illustrant la trajectoire d'Eldi, de Clermont jusqu'au master CMW/DIGIS et au stage en IA"></svg>
+          <figcaption class="sigmoide-legende">
+            <span class="mono">σ(x) = 1 / (1 + e<sup>−x</sup>)</span> — la fonction sigmoïde :
+            objet mathématique <em>et</em> fonction d'activation des réseaux de neurones. Ma trajectoire, des sciences vers l'IA.
+          </figcaption>
+        </figure>
       </section>
 
       <!-- ===== COMPETENCES : 5 familles ===== -->

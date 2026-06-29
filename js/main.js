@@ -150,6 +150,92 @@ function animerNom() {
   etape(); // on lance la boucle
 }
 
-// Au chargement : francais par defaut, puis on lance l'animation du nom
+// --- Signature du site : la courbe sigmoide (la trajectoire d'Eldi) ---
+// sigma(x) = 1 / (1 + e^-x) : objet mathematique ET fonction d'activation de reseau de neurones.
+
+// Les etapes du parcours, dans l'ordre. "fort: true" = experience mise en avant (le master).
+// (Eldi : modifie librement les labels ; "x" controle la position le long de la courbe.)
+var etapesParcours = [
+  { x: -5.4, label: "Clermont",           fort: false },
+  { x: -3.2, label: "Bordeaux",           fort: false },
+  { x: -1.2, label: "Amsterdam",          fort: false },
+  { x:  0.4, label: "Turin",              fort: false },
+  { x:  2.4, label: "Corée",              fort: false },
+  { x:  5.4, label: "Master CMW + DIGIS", fort: true  }
+];
+
+function dessinerSigmoide() {
+  var svg = document.getElementById("sigmoide-svg");
+  if (!svg) return;
+
+  // Marges et dimensions du dessin (en unites du viewBox)
+  var L = 70, R = 60, T = 50, B = 90;   // marges : gauche, droite, haut, bas
+  var larg = 900, haut = 420;
+  var xMin = -6, xMax = 6;
+
+  // Deux petites fonctions pour passer des maths aux coordonnees du dessin
+  function versX(x) { return L + (x - xMin) / (xMax - xMin) * (larg - L - R); }
+  function versY(s) { return (haut - B) - s * (haut - T - B); } // s va de 0 (bas) a 1 (haut)
+
+  var ns = "http://www.w3.org/2000/svg"; // espace de noms obligatoire pour creer du SVG
+
+  // 1) Tracer la courbe en echantillonnant la fonction sigmoide en 120 points
+  var d = "";
+  for (var i = 0; i <= 120; i++) {
+    var x = xMin + (xMax - xMin) * (i / 120);
+    var s = 1 / (1 + Math.exp(-x));        // la sigmoide elle-meme
+    d += (i === 0 ? "M" : "L") + versX(x).toFixed(1) + " " + versY(s).toFixed(1) + " ";
+  }
+  var courbe = document.createElementNS(ns, "path");
+  courbe.setAttribute("d", d);
+  courbe.setAttribute("class", "sig-courbe");
+  svg.appendChild(courbe);
+
+  // 2) Placer un point + une etiquette pour chaque etape du parcours
+  for (var j = 0; j < etapesParcours.length; j++) {
+    var e = etapesParcours[j];
+    var s2 = 1 / (1 + Math.exp(-e.x));
+    var px = versX(e.x), py = versY(s2);
+
+    var point = document.createElementNS(ns, "circle");
+    point.setAttribute("cx", px.toFixed(1));
+    point.setAttribute("cy", py.toFixed(1));
+    point.setAttribute("r", e.fort ? 9 : 5);              // le master est plus gros
+    point.setAttribute("class", e.fort ? "sig-point fort" : "sig-point");
+    svg.appendChild(point);
+
+    var texte = document.createElementNS(ns, "text");
+    texte.setAttribute("x", px.toFixed(1));
+    texte.setAttribute("y", (py + (e.fort ? -18 : 22)).toFixed(1)); // master au-dessus, le reste en dessous
+    texte.setAttribute("text-anchor", "middle");
+    texte.setAttribute("class", e.fort ? "sig-label fort" : "sig-label");
+    texte.textContent = e.label;
+    svg.appendChild(texte);
+  }
+
+  // 3) Animation : la courbe se "dessine" quand la section arrive a l'ecran
+  var moinsDanimations = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (moinsDanimations) {
+    svg.classList.add("visible"); // pas d'animation : tout est visible directement
+    return;
+  }
+  var longueur = courbe.getTotalLength();
+  courbe.style.strokeDasharray = longueur;   // on "cache" le trait...
+  courbe.style.strokeDashoffset = longueur;  // ... en le decalant de toute sa longueur
+  var observateur = new IntersectionObserver(function (entrees) {
+    entrees.forEach(function (entree) {
+      if (entree.isIntersecting) {
+        courbe.style.transition = "stroke-dashoffset 1.8s ease";
+        courbe.style.strokeDashoffset = "0"; // le trait se devoile -> effet de dessin
+        svg.classList.add("visible");        // fait apparaitre les points et les labels
+        observateur.disconnect();            // on n'observe plus, c'est joue
+      }
+    });
+  }, { threshold: 0.3 });
+  observateur.observe(svg);
+}
+
+// Au chargement : langue par defaut, animation du nom, puis dessin de la sigmoide
 appliquerLangue("fr");
 animerNom();
+dessinerSigmoide();
