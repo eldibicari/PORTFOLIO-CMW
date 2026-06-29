@@ -407,6 +407,36 @@ button:focus-visible {
 .projet-vedette.projet-texte { grid-template-columns: 1fr; }
 .projet-texte .projet-infos { max-width: 72ch; } /* limite la largeur pour le confort de lecture */
 .ww-liens { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+
+/* Projets de mathematiques (Bordeaux) : groupe compact en 2 colonnes */
+.maths-groupe { margin-top: .5rem; }
+.maths-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2 colonnes -> 1 sur mobile */
+  gap: 1.6rem;
+  margin-top: 1.1rem;
+}
+.maths-carte {
+  border: 1px solid #e3e7e5;
+  border-radius: 12px;
+  padding: 1.4rem 1.5rem;
+  background: #fbfcfb;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.maths-meta {
+  font-family: var(--police-mono);
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--secondaire);
+  margin-bottom: .2rem;
+}
+.maths-carte .carte-titre { margin: .2rem 0 .25rem; }
+.maths-carte .accroche { margin: .2rem 0 .7rem; }
+.role-compact { margin-top: .8rem; font-size: .92rem; color: var(--secondaire); }
+.maths-carte .carte-lien { display: inline-block; margin-top: .7rem; }
 .media-plein {
   display: inline-block;
   margin-top: .5rem;
