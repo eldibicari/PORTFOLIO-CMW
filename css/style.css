@@ -401,6 +401,7 @@ button:focus-visible {
   background: #fff;
 }
 .apercu-iframe.pdf { aspect-ratio: 3 / 4; } /* format portrait pour un poster */
+.apercu-img { width: 100%; height: auto; display: block; border: 1px solid #d7dcdf; border-radius: 10px; background: #eef1ef; } /* couverture (image) d'un projet */
 .media-plein {
   display: inline-block;
   margin-top: .5rem;
@@ -430,6 +431,27 @@ button:focus-visible {
 .role-liste { list-style: none; margin: .5rem 0 0; }
 .role-liste li { font-size: .92rem; padding: .28rem 0; border-bottom: 1px solid #eef1ef; }
 .role-liste li:last-child { border-bottom: none; }
+
+/* Carte plus academique (ex. Winter Week) : intitule en mono + badge "a venir" */
+.projet-kicker {
+  font-family: var(--police-mono);
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--secondaire);
+  margin-bottom: .3rem;
+}
+.badge-avenir {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: var(--police-mono);
+  font-size: .8rem;
+  color: var(--profondeur);
+  background: #efeaf7;            /* leger fond violet (profondeur viridis) */
+  border: 1px solid #d9cff0;
+  border-radius: 6px;
+  padding: .35rem .7rem;
+}
 
 /* Sur petit ecran : l'apercu passe au-dessus du texte */
 @media (max-width: 760px) {
