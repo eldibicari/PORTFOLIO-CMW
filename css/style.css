@@ -383,9 +383,14 @@ button:focus-visible {
 .projet-vedette {
   display: grid;
   grid-template-columns: 1.05fr 1fr; /* apercu a gauche, texte a droite */
-  gap: 2rem;
+  gap: 2.5rem;          /* un peu plus d'air entre l'apercu et le texte */
   align-items: start;
-  margin-bottom: 2.5rem;
+}
+/* Plus d'espace + un filet fin pour bien separer deux projets */
+.projet-vedette:not(:last-child) {
+  margin-bottom: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid #e3e7e5;
 }
 .projet-media { position: sticky; top: 1rem; } /* l'apercu reste visible pendant qu'on lit */
 .apercu-iframe {
@@ -406,7 +411,7 @@ button:focus-visible {
 }
 .media-plein:hover { text-decoration: underline; }
 .projet-infos { text-align: justify; -webkit-hyphens: auto; hyphens: auto; } /* aligne comme la section A propos */
-.projet-vedette .accroche { font-weight: 700; font-size: 1.15rem; margin: .3rem 0 .9rem; }
+.projet-vedette .accroche { color: var(--accent); font-weight: 600; font-size: 1rem; margin: .3rem 0 .9rem; } /* sous-titre : couleur du role, plus petit que le titre */
 .note-busan { /* le sejour a Busan, mis en valeur par un filet vert */
   color: var(--secondaire);
   font-size: .95rem;
