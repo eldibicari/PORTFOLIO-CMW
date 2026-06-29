@@ -3,20 +3,77 @@
   <head> <!-- Debut des metadonnees (partie non visible de la page) -->
     <meta charset="utf-8" /> <!-- Encodage UTF-8 pour bien afficher les caracteres -->
     <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Mise a l'echelle correcte sur mobile -->
-    <title id="titrePage">Portfolio - Eldi BICARI</title> 
+    <title id="titrePage">Portfolio - Eldi Bicari</title>
+
+    <!-- Polices : Space Grotesk (titres) + JetBrains Mono (touches techniques) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css" /> <!-- Notre feuille de style -->
+
+    <!-- 'defer' : le JS se charge sans bloquer l'affichage et s'execute une fois le HTML pret -->
+    <script src="js/main.js" defer></script>
   </head> <!-- Fin du head -->
+
   <body> <!-- Debut du contenu visible -->
-    <button id="btn-fr" type="button">FR</button> <!-- Bouton pour passer en francais -->
-    <button id="btn-en" type="button">EN</button> <!-- Bouton pour passer en anglais -->
 
-    <h1 id="titrePrincipal">Portfolio - Eldi BICARI</h1> 
+    <!-- Lien d'evitement : permet au clavier de sauter directement au contenu -->
+    <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
-    <h2 id="aPropos">A propos</h2> 
-    <h2 id="projets">Projets</h2> 
-    <h2 id="competences">Competences</h2> 
-    <h2 id="experiences">Experiences</h2> 
-    <h2 id="contact">Contact</h2> 
+    <!-- En-tete : boutons de langue (ton systeme FR/EN existant) -->
+    <header class="entete">
+      <nav class="langues" aria-label="Choix de la langue">
+        <button id="btn-fr" type="button">FR</button> <!-- Bouton pour passer en francais -->
+        <button id="btn-en" type="button">EN</button> <!-- Bouton pour passer en anglais -->
+      </nav>
+    </header>
 
-    <script src="js/main.js"></script> <!-- Lie le fichier JavaScript ; place en bas pour que le HTML soit deja charge -->
-  </body> 
-</html> 
+    <main id="contenu"> <!-- Contenu principal (cible du lien d'evitement) -->
+
+      <!-- Realise par Eldi Bicari. Aide a la mise en forme : Claude Code (Anthropic) ; contenus et experiences reels, de l'auteur. -->
+
+      <!-- ===== HAUT DE PAGE : photo + presentation (sans dates) ===== -->
+      <section class="hero">
+        <figure class="hero-photo">
+          <!-- TODO Eldi : depose ta photo dans le dossier img/ sous le nom eldi.jpg (format carre conseille) -->
+          <img src="img/eldi.jpg" alt="Portrait d'Eldi Bicari" width="240" height="240" />
+        </figure>
+
+        <div class="hero-texte">
+          <!-- Le nom s'ecrit lettre par lettre (anime par le JS) suivi d'un curseur clignotant -->
+          <h1 class="hero-nom">
+            <span id="nomAnime"></span><span class="curseur" aria-hidden="true"></span>
+          </h1>
+
+          <p id="heroRole" class="hero-role"></p>   <!-- Sous-titre / role (traduit FR-EN par le JS) -->
+          <p id="heroIntro" class="hero-intro"></p> <!-- Phrase d'accroche (traduite FR-EN) -->
+
+          <a id="heroCta" class="bouton" href="#contact"></a> <!-- Bouton vers le contact -->
+        </div>
+      </section>
+
+      <!-- ===== A PROPOS ===== -->
+      <section class="apropos">
+        <h2 id="aPropos" class="titre-section">A propos</h2>
+        <p id="aProposTexte" class="apropos-texte"></p>  <!-- 1er paragraphe (traduit FR-EN) -->
+        <p id="aProposTexte2" class="apropos-texte"></p> <!-- 2e paragraphe (traduit FR-EN) -->
+
+        <!-- Quelques mots-cles affiches en police mono (touches techniques) -->
+        <ul class="mots-cles" aria-label="Domaines">
+          <li>IA &amp; Data</li>
+          <li>Cultures numeriques</li>
+          <li>Sciences</li>
+        </ul>
+      </section>
+
+      <!-- ===== Sections suivantes : a construire dans les prochaines etapes ===== -->
+      <section><h2 id="projets" class="titre-section">Projets</h2></section>
+      <section><h2 id="competences" class="titre-section">Competences</h2></section>
+      <section><h2 id="experiences" class="titre-section">Experiences</h2></section>
+      <section><h2 id="contact" class="titre-section">Contact</h2></section>
+
+    </main>
+
+  </body>
+</html>
