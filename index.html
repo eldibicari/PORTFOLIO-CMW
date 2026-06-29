@@ -139,17 +139,21 @@
           </div>
         </article>
 
-        <div class="grille-projets"> <!-- dernier projet (Amsterdam) en grille -->
-
-          <article class="carte">
-            <h3 class="carte-titre">Benchmarking AI Chatbots</h3>
-            <ul class="carte-techs" aria-label="Apports"><li>Data</li><li>Anglais</li><li>Équipe</li></ul>
-            <p class="carte-desc" id="projetAmsterdamDesc"></p>
-            <!-- TODO : lien vers le rapport publie -->
-            <a class="carte-lien" href="#">Rapport à lier</a>
-          </article>
-
-        </div>
+        <!-- Benchmarking AI Chatbots = projet phare (recherche) : l'apercu est le poster (PDF en ligne) -->
+        <article class="projet-vedette">
+          <div class="projet-media">
+            <iframe class="apercu-iframe pdf" src="https://www.digitalmethods.net/pub/Dmi/WinterSchool2025BenchmarkingAIChatbots/BenchmarkLLM-1.pdf" loading="lazy"
+                    title="Poster du projet Benchmarking AI Chatbots (Whose Voice Matters)"></iframe>
+            <a class="media-plein" href="https://www.digitalmethods.net/Dmi/WinterSchool2025BenchmarkingAIChatbots" target="_blank" rel="noopener">Voir le projet publié ↗</a>
+          </div>
+          <div class="projet-infos">
+            <h3 class="carte-titre" id="amsterdamTitre">Benchmarking AI Chatbots</h3>
+            <p class="accroche" id="amsterdamAccroche"></p>
+            <p id="amsterdamIntro"></p>
+            <p class="role-titre" id="amsterdamRoleTitre">Mon rôle</p>
+            <ul class="role-liste" id="amsterdamRole"></ul> <!-- rempli par le JS (FR/EN) -->
+          </div>
+        </article>
       </section>
 
       <!-- ===== PARCOURS : LA signature du site (future courbe sigmoide) ===== -->

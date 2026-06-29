@@ -395,6 +395,7 @@ button:focus-visible {
   border-radius: 10px;
   background: #fff;
 }
+.apercu-iframe.pdf { aspect-ratio: 3 / 4; } /* format portrait pour un poster */
 .media-plein {
   display: inline-block;
   margin-top: .5rem;
