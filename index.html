@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Mise a l'echelle correcte sur mobile -->
     <title id="titrePage">Portfolio - Eldi Bicari</title>
 
+    <!-- Favicon : une courbe sigmoide (ma signature, cf. section Parcours) -->
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+
     <!-- Polices : Space Grotesk (titres) + JetBrains Mono (touches techniques) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,12 +24,25 @@
     <!-- Lien d'evitement : permet au clavier de sauter directement au contenu -->
     <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
-    <!-- En-tete : boutons de langue (ton systeme FR/EN existant) -->
+    <!-- En-tete fixe : menu de navigation (saute aux sections) + boutons de langue -->
     <header class="entete">
-      <nav class="langues" aria-label="Choix de la langue">
-        <button id="btn-fr" type="button">FR</button> <!-- Bouton pour passer en francais -->
-        <button id="btn-en" type="button">EN</button> <!-- Bouton pour passer en anglais -->
-      </nav>
+      <div class="entete-inner">
+        <!-- Menu principal : chaque lien pointe vers l'ancre d'une section (id du titre) -->
+        <nav class="menu-principal" aria-label="Navigation principale">
+          <ul>
+            <li><a href="#aPropos" id="navApropos"></a></li>
+            <li><a href="#projets" id="navProjets"></a></li>
+            <li><a href="#parcours" id="navParcours"></a></li>
+            <li><a href="#competences" id="navCompetences"></a></li>
+            <li><a href="#experiences" id="navExperiences"></a></li>
+            <li><a href="#contact" id="navContact"></a></li>
+          </ul>
+        </nav>
+        <nav class="langues" aria-label="Choix de la langue">
+          <button id="btn-fr" type="button">FR</button> <!-- Bouton pour passer en francais -->
+          <button id="btn-en" type="button">EN</button> <!-- Bouton pour passer en anglais -->
+        </nav>
+      </div>
     </header>
 
     <main id="contenu"> <!-- Contenu principal (cible du lien d'evitement) -->
@@ -263,6 +279,12 @@
             <h3 class="exp-titre" id="expLeclercTitre"></h3>
             <p id="expLeclercDesc"></p>
           </li>
+          <!-- Engagement le plus ancien : role de representant des eleves (Save the Children) -->
+          <li class="exp-item">
+            <p class="exp-meta" id="expSaveMeta"></p>
+            <h3 class="exp-titre" id="expSaveTitre"></h3>
+            <p id="expSaveDesc"></p>
+          </li>
         </ul>
       </section>
 
@@ -282,10 +304,12 @@
 
     </main>
 
-    <!-- Pied de page : mentions legales + credit IA (exiges par le brief) + favicon a venir -->
+    <!-- Pied de page : mentions legales + credit IA honnete (exiges par le brief) -->
     <footer class="pied">
-      <p>© 2026 Eldi Bicari — <span class="a-completer">mentions légales à compléter</span>.</p>
-      <p class="credit-ia">Réalisé par Eldi Bicari. Aide à la mise en forme : Claude Code (Anthropic) ; contenus et expériences réels, de l'auteur.</p>
+      <p class="pied-copyright">© 2026 Eldi Bicari</p>
+      <p id="piedMentions" class="pied-mentions"></p>
+      <p id="piedCreditIa" class="credit-ia"></p>
+      <p class="pied-haut"><a href="#contenu" id="piedRetourHaut"></a></p>
     </footer>
 
   </body>

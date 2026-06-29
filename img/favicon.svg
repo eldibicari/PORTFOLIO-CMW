@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Eldi Bicari">
+  <!-- Fond carre arrondi, couleur encre du nuancier viridis -->
+  <rect width="32" height="32" rx="7" fill="#18242A"/>
+  <!-- Courbe sigmoide (fonction d'activation) : ma signature, en vert "present" -->
+  <path d="M4 25 C 11 25 11 16 16 16 S 21 7 28 7"
+        fill="none" stroke="#A7D734" stroke-width="3"
+        stroke-linecap="round"/>
+</svg>

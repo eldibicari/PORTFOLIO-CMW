@@ -80,6 +80,20 @@ var francais = {
   expLeclercMeta: "2019 → 2024 · Sainte-Eulalie (Bordeaux)",
   expLeclercTitre: "Agent de service client — Leclerc Drive",
   expLeclercDesc: "Suivi des commandes et relation client, reporting d'indicateurs à la direction, gestion des stocks et résolution de problèmes au quotidien.",
+  expSaveMeta: "Engagement · Albanie · 2014",
+  expSaveTitre: "Représentant des élèves — Save the Children",
+  expSaveDesc: "Élu sénateur de classe puis président du conseil des élèves de mon collège, dans le cadre d'un programme Save the Children pour une école inclusive et de qualité. Très tôt, le rôle de représentant a compté pour moi — un fil que j'ai prolongé en étant délégué deux ans durant mon master.",
+  // Menu de navigation (haut de page)
+  navApropos: "À propos",
+  navProjets: "Projets",
+  navParcours: "Parcours",
+  navCompetences: "Compétences",
+  navExperiences: "Expériences",
+  navContact: "Contact",
+  // Pied de page
+  piedMentions: "Site personnel d'Eldi Bicari, réalisé dans le cadre du Master 2 Cultures et Métiers du Web (Université Gustave Eiffel). Hébergé sur GitHub Pages. Contact : eldibicari99@gmail.com.",
+  piedCreditIa: "Ce site a été développé avec l'aide de Claude (Anthropic) pour l'assistance au code et la mise en forme. Les contenus, projets et expériences présentés sont réels ; l'auteur a écrit et compris une partie du code.",
+  piedRetourHaut: "↑ Revenir en haut",
   cvBtn: "Voir mon CV",
   cvMsg: "📄 Mon CV final arrive bientôt — cette section sera mise à jour."
 };
@@ -163,6 +177,20 @@ var anglais = {
   expLeclercMeta: "2019 → 2024 · Sainte-Eulalie (Bordeaux)",
   expLeclercTitre: "Customer service agent — Leclerc Drive",
   expLeclercDesc: "Order follow-up and customer support, reporting KPIs to management, inventory management and daily problem-solving.",
+  expSaveMeta: "Civic engagement · Albania · 2014",
+  expSaveTitre: "Student representative — Save the Children",
+  expSaveDesc: "Elected class senator and then president of my middle-school student council, as part of a Save the Children programme for inclusive, quality education. The representative role mattered to me early on — a thread I continued by serving as a student delegate for two years during my master's.",
+  // Menu de navigation (haut de page)
+  navApropos: "About",
+  navProjets: "Projects",
+  navParcours: "Path",
+  navCompetences: "Skills",
+  navExperiences: "Experience",
+  navContact: "Contact",
+  // Pied de page
+  piedMentions: "Personal website by Eldi Bicari, created for the Master 2 Cultures et Métiers du Web programme (Université Gustave Eiffel). Hosted on GitHub Pages. Contact: eldibicari99@gmail.com.",
+  piedCreditIa: "This site was developed with the help of Claude (Anthropic) for code assistance and layout. The content, projects and experiences shown are real; the author wrote and understands part of the code.",
+  piedRetourHaut: "↑ Back to top",
   cvBtn: "View my résumé",
   cvMsg: "📄 My final résumé is coming soon — this section will be updated."
 };

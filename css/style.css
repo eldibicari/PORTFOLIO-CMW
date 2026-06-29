@@ -52,12 +52,46 @@ main {
   z-index: 10;
 }
 
-/* --- En-tete : boutons de langue alignes a droite --- */
+/* --- En-tete fixe : menu de navigation + boutons de langue --- */
 .entete {
+  position: sticky; /* reste collee en haut quand on fait defiler la page */
+  top: 0;
+  z-index: 20;
+  background: rgba(243, 245, 242, 0.92); /* fond legerement transparent */
+  backdrop-filter: blur(6px); /* floute ce qui passe derriere */
+  border-bottom: 1px solid #dde3df;
+}
+.entete-inner {
   max-width: 980px;
-  margin: 0 auto 1rem;
+  margin: 0 auto;
+  padding: .55rem 1rem;
   display: flex;
-  justify-content: flex-end; /* pousse les boutons vers la droite */
+  align-items: center;
+  justify-content: space-between; /* menu a gauche, langues a droite */
+  gap: 1rem;
+  flex-wrap: wrap; /* passe a la ligne sur petit ecran */
+}
+/* Menu principal : liens vers les sections */
+.menu-principal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem 1.1rem;
+}
+.menu-principal a {
+  font-family: var(--police-mono);
+  font-size: .8rem;
+  color: var(--secondaire);
+  text-decoration: none;
+  padding: .15rem 0;
+  border-bottom: 2px solid transparent; /* soulignement revele au survol */
+}
+.menu-principal a:hover,
+.menu-principal a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 .langues button {
   font-family: var(--police-mono);
@@ -148,6 +182,7 @@ button:focus-visible {
   text-transform: uppercase;
   letter-spacing: .1em;
   color: var(--accent);
+  scroll-margin-top: 5rem; /* l'ancre s'arrete sous l'en-tete fixe, pas dessous */
   margin: 3rem 0 1rem;
   padding-bottom: .4rem;
   border-bottom: 1px solid #dde3df;
@@ -338,7 +373,17 @@ button:focus-visible {
   font-size: .8rem;
   color: var(--secondaire);
 }
+.pied-copyright { font-weight: 500; color: var(--encre); }
+.pied-mentions { margin-top: .4rem; line-height: 1.55; }
 .pied .credit-ia { margin-top: .5rem; font-style: italic; }
+.pied-haut { margin-top: .9rem; }
+.pied-haut a {
+  font-family: var(--police-mono);
+  font-size: .78rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+.pied-haut a:hover { text-decoration: underline; }
 
 /* Repere visuel discret pour ce qui reste a remplir */
 .a-completer { color: #9aa6a3; font-style: italic; }
