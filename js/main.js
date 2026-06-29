@@ -25,9 +25,15 @@ var francais = {
   motCle4: "Gestion de projet",
   motCle5: "IA & data",
   projets: "Projets",
+  parcours: "Parcours",
   competences: "Compétences",
   experiences: "Expériences",
-  contact: "Contact"
+  contact: "Contact",
+  projetNoliDesc: "À compléter : documentaire web interactif France × Corée du Sud (culture du jeu vidéo). Dev web, UX, terrain à Busan.",
+  projetSociosimDesc: "À compléter : application d'IA générative simulant des entretiens sociologiques (stage, laboratoire LISIS).",
+  projetAmsterdamDesc: "À compléter : benchmarking de chatbots IA — Digital Methods Winter School (Amsterdam), équipe internationale, rapport publié.",
+  projetDicoworkDesc: "À compléter : projet web à deux, présenté et soutenu à l'Université de Turin.",
+  contactIntro: "À compléter : une phrase d'invitation + tes liens (email, LinkedIn, GitHub)."
 };
 
 // Memes cles, mais en anglais
@@ -54,9 +60,15 @@ var anglais = {
   motCle4: "Project management",
   motCle5: "AI & data",
   projets: "Projects",
+  parcours: "Journey",
   competences: "Skills",
   experiences: "Experience",
-  contact: "Contact"
+  contact: "Contact",
+  projetNoliDesc: "To complete: interactive web documentary France × South Korea (video-game culture). Web dev, UX, fieldwork in Busan.",
+  projetSociosimDesc: "To complete: a generative-AI app simulating sociological interviews (internship, LISIS research lab).",
+  projetAmsterdamDesc: "To complete: benchmarking AI chatbots — Digital Methods Winter School (Amsterdam), international team, published report.",
+  projetDicoworkDesc: "To complete: a two-person web project, presented and defended at the University of Turin.",
+  contactIntro: "To complete: a short invitation line + your links (email, LinkedIn, GitHub)."
 };
 
 function appliquerLangue(codeLangue) {
@@ -86,30 +98,56 @@ document.getElementById("btn-en").addEventListener("click", function () {
   appliquerLangue("en");
 });
 
-// --- Animation : le nom s'ecrit lettre par lettre ---
+// --- Animation : le nom s'ecrit, s'efface, puis se reecrit, EN BOUCLE (machine a ecrire) ---
 // (le nom est le meme en FR et en EN, donc on le gere a part, hors des objets de langue)
 var nomComplet = "Eldi Bicari";
+
+// Reglages de l'animation (a ajuster librement) :
+var vitesseFrappe = 110;        // ms entre deux lettres quand on ecrit
+var vitesseEffacement = 55;     // ms entre deux lettres quand on efface
+var dureeAffichage = 4000;      // T : duree pendant laquelle le nom complet reste affiche (ms)
+var pauseAvantReecriture = 700; // petite pause une fois le nom efface, avant de recommencer (ms)
 
 function animerNom() {
   var cible = document.getElementById("nomAnime");
   if (!cible) return; // securite : si l'element n'existe pas, on s'arrete
 
-  // Accessibilite : si l'utilisateur prefere moins d'animations, on affiche tout d'un coup
+  // Accessibilite : si l'utilisateur prefere moins d'animations, on affiche le nom fixe (pas de boucle)
   var moinsDanimations = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (moinsDanimations) {
     cible.textContent = nomComplet;
     return;
   }
 
-  var position = 0;          // combien de lettres sont deja affichees
-  cible.textContent = "";    // on part d'un texte vide
-  var minuteur = setInterval(function () {
-    position = position + 1;
-    cible.textContent = nomComplet.slice(0, position); // on revele une lettre de plus
-    if (position >= nomComplet.length) {
-      clearInterval(minuteur); // arrive a la fin : on arrete la repetition
+  var position = 0;         // nombre de lettres actuellement affichees
+  var enEffacement = false; // false = on ecrit, true = on efface
+
+  // Une "etape" ajoute ou retire une lettre, puis se rappelle elle-meme apres un delai
+  function etape() {
+    if (!enEffacement) {
+      // Phase d'ecriture : on revele une lettre de plus
+      position = position + 1;
+      cible.textContent = nomComplet.slice(0, position);
+      if (position === nomComplet.length) {
+        enEffacement = true;                // nom complet : la prochaine etape effacera
+        setTimeout(etape, dureeAffichage);  // ... mais seulement apres la duree T
+      } else {
+        setTimeout(etape, vitesseFrappe);
+      }
+    } else {
+      // Phase d'effacement : on retire une lettre
+      position = position - 1;
+      cible.textContent = nomComplet.slice(0, position);
+      if (position === 0) {
+        enEffacement = false;                    // tout efface : on repart en ecriture
+        setTimeout(etape, pauseAvantReecriture); // ... apres une petite pause
+      } else {
+        setTimeout(etape, vitesseEffacement);
+      }
     }
-  }, 110); // 110 ms entre chaque lettre
+  }
+
+  etape(); // on lance la boucle
 }
 
 // Au chargement : francais par defaut, puis on lance l'animation du nom

@@ -87,13 +87,96 @@
         </div>
       </section>
 
-      <!-- ===== Sections suivantes : a construire dans les prochaines etapes ===== -->
-      <section><h2 id="projets" class="titre-section">Projets</h2></section>
-      <section><h2 id="competences" class="titre-section">Competences</h2></section>
-      <section><h2 id="experiences" class="titre-section">Experiences</h2></section>
-      <section><h2 id="contact" class="titre-section">Contact</h2></section>
+      <!-- ===== PROJETS : 4 cartes (Noli portera la video) ===== -->
+      <section class="projets">
+        <h2 id="projets" class="titre-section">Projets</h2>
+        <div class="grille-projets"> <!-- grille de cartes, responsive -->
+
+          <article class="carte">
+            <h3 class="carte-titre">Noli</h3>
+            <ul class="carte-techs" aria-label="Apports"><li>Web</li><li>UX</li><li>Corée</li></ul>
+            <p class="carte-desc" id="projetNoliDesc"></p>
+            <!-- TODO : la video de Noli viendra ici (video auto-hebergee + sous-titres, ou iframe) -->
+            <a class="carte-lien" href="https://noli.mastercmw.com/" target="_blank" rel="noopener">noli.mastercmw.com ↗</a>
+          </article>
+
+          <article class="carte">
+            <h3 class="carte-titre">SocioSim · MIMESIS</h3>
+            <ul class="carte-techs" aria-label="Apports"><li>IA générative</li><li>Recherche</li></ul>
+            <p class="carte-desc" id="projetSociosimDesc"></p>
+            <!-- TODO : lien public a confirmer (l'URL Vercel actuelle est privee) -->
+            <a class="carte-lien" href="#">Lien à confirmer</a>
+          </article>
+
+          <article class="carte">
+            <h3 class="carte-titre">Benchmarking AI Chatbots</h3>
+            <ul class="carte-techs" aria-label="Apports"><li>Data</li><li>Anglais</li><li>Équipe</li></ul>
+            <p class="carte-desc" id="projetAmsterdamDesc"></p>
+            <!-- TODO : lien vers le rapport publie -->
+            <a class="carte-lien" href="#">Rapport à lier</a>
+          </article>
+
+          <article class="carte">
+            <h3 class="carte-titre">Dicowork</h3>
+            <ul class="carte-techs" aria-label="Apports"><li>Web</li><li>Binôme</li><li>Turin</li></ul>
+            <p class="carte-desc" id="projetDicoworkDesc"></p>
+            <a class="carte-lien" href="https://www.dicowork.evanm.fr/" target="_blank" rel="noopener">dicowork.evanm.fr ↗</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ===== PARCOURS : LA signature du site (future courbe sigmoide) ===== -->
+      <section class="parcours">
+        <h2 id="parcours" class="titre-section">Parcours</h2>
+        <!-- Signature : une courbe sigmoide = objet mathematique ET fonction d'activation
+             de reseau de neurones = la trajectoire d'Eldi. On la construira a l'etape dediee. -->
+        <div class="zone-placeholder" id="parcours-zone">
+          <p>Ici viendra la <strong>courbe sigmoïde</strong> de ta trajectoire
+             (Clermont → Bordeaux → Amsterdam → Turin → Corée → CMW / DIGIS / stage IA).
+             C'est la pièce maîtresse — on la construit ensuite.</p>
+        </div>
+      </section>
+
+      <!-- ===== COMPETENCES : 5 familles ===== -->
+      <section class="competences">
+        <h2 id="competences" class="titre-section">Competences</h2>
+        <div class="grille-competences">
+          <div class="bloc-comp"><h3>Web</h3><p class="a-completer">à compléter</p></div>
+          <div class="bloc-comp"><h3>Data &amp; IA</h3><p class="a-completer">à compléter</p></div>
+          <div class="bloc-comp"><h3>Scientifique</h3><p class="a-completer">à compléter</p></div>
+          <div class="bloc-comp"><h3>Gestion de projet</h3><p class="a-completer">à compléter</p></div>
+          <div class="bloc-comp"><h3>Langues</h3><p class="a-completer">à compléter</p></div>
+        </div>
+      </section>
+
+      <!-- ===== EXPERIENCES : court, competences transversales ===== -->
+      <section class="experiences">
+        <h2 id="experiences" class="titre-section">Experiences</h2>
+        <ul class="liste-exp">
+          <li><strong>McDonald's</strong> — <span class="a-completer">compétences transversales à compléter</span></li>
+          <li><strong>Leclerc</strong> — <span class="a-completer">compétences transversales à compléter</span></li>
+        </ul>
+      </section>
+
+      <!-- ===== CONTACT ===== -->
+      <section class="contact">
+        <h2 id="contact" class="titre-section">Contact</h2>
+        <p id="contactIntro" class="contact-intro"></p>
+        <ul class="contact-liens">
+          <li><a href="#">Email à compléter</a></li>
+          <li><a href="#">LinkedIn à compléter</a></li>
+          <li><a href="#">GitHub à compléter</a></li>
+        </ul>
+      </section>
 
     </main>
+
+    <!-- Pied de page : mentions legales + credit IA (exiges par le brief) + favicon a venir -->
+    <footer class="pied">
+      <p>© 2026 Eldi Bicari — <span class="a-completer">mentions légales à compléter</span>.</p>
+      <p class="credit-ia">Réalisé par Eldi Bicari. Aide à la mise en forme : Claude Code (Anthropic) ; contenus et expériences réels, de l'auteur.</p>
+    </footer>
 
   </body>
 </html>

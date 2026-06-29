@@ -241,3 +241,104 @@ button:focus-visible {
   html { scroll-behavior: auto; }
   .curseur { animation: none; } /* on coupe le clignotement */
 }
+
+/* ============ SECTIONS SUIVANTES (structure de depart) ============ */
+
+/* --- Projets : grille de cartes qui s'adapte au nombre de colonnes possibles --- */
+.grille-projets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.carte {
+  background: #fff;
+  border: 1px solid #d7dcdf;
+  border-radius: 10px;
+  padding: 1.3rem 1.4rem;
+  display: flex;          /* empile titre / technos / texte / lien */
+  flex-direction: column;
+}
+.carte-titre { font-size: 1.2rem; margin-bottom: .6rem; }
+.carte-techs {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-bottom: .8rem;
+}
+.carte-techs li { /* petites etiquettes mono, comme les mots-cles */
+  font-family: var(--police-mono);
+  font-size: .7rem;
+  color: var(--profondeur);
+  border: 1px solid #e0e4e2;
+  border-radius: 999px;
+  padding: .15rem .6rem;
+}
+.carte-desc {
+  color: var(--secondaire);
+  font-size: .95rem;
+  flex-grow: 1; /* pousse le lien en bas, cartes alignees meme si textes inegaux */
+}
+.carte-lien {
+  font-family: var(--police-mono);
+  font-size: .85rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 1rem;
+}
+.carte-lien:hover { text-decoration: underline; }
+
+/* --- Zone "placeholder" (ex. la future sigmoide) : encadre en pointilles --- */
+.zone-placeholder {
+  border: 1px dashed #b9c2bf;
+  border-radius: 10px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--secondaire);
+}
+
+/* --- Competences : grille de familles --- */
+.grille-competences {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.2rem;
+}
+.bloc-comp h3 {
+  font-family: var(--police-mono);
+  font-size: .95rem;
+  color: var(--accent);
+  margin-bottom: .3rem;
+}
+
+/* --- Experiences : liste simple --- */
+.liste-exp { list-style: none; }
+.liste-exp li { padding: .5rem 0; border-bottom: 1px solid #e3e7e5; }
+
+/* --- Contact : liens en ligne --- */
+.contact-liens {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.contact-liens a {
+  font-family: var(--police-mono);
+  color: var(--accent);
+  text-decoration: none;
+}
+.contact-liens a:hover { text-decoration: underline; }
+
+/* --- Pied de page --- */
+.pied {
+  max-width: 980px;
+  margin: 4rem auto 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid #dde3df;
+  font-size: .8rem;
+  color: var(--secondaire);
+}
+.pied .credit-ia { margin-top: .5rem; font-style: italic; }
+
+/* Repere visuel discret pour ce qui reste a remplir */
+.a-completer { color: #9aa6a3; font-style: italic; }
